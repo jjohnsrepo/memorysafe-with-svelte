@@ -1,21 +1,26 @@
 <script>
-  let sending = false;
-  let sent    = false;
-  let error   = null;
+  import Reveal from '$lib/Reveal.svelte';
 
+  export let heading = 'Get in touch';
+  export let sub = 'We respond within one business day — usually much faster.';
+
+  let sending = false;
+  let sent = false;
+  /** @type {string | null} */
+  let error = null;
+
+  /** @param {SubmitEvent & { currentTarget: HTMLFormElement }} e */
   async function handleSubmit(e) {
     const form = e.currentTarget;
     sending = true;
-    error   = null;
+    error = null;
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         body: new FormData(form),
       });
-
       const body = await res.json();
-
       if (res.ok && body.success) {
         sent = true;
         form.reset();
@@ -30,294 +35,300 @@
   }
 </script>
 
-<section id="contact">
+<section id="contact" class="section section--alt">
   <div class="wrapper">
-    <h2>Get in Touch</h2>
-    <p class="sub">We respond within one business day, usually much faster.</p>
+    <Reveal>
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title">{heading}</h2>
+      <p class="section-sub">{sub}</p>
+    </Reveal>
 
     <div class="layout">
-      {#if sent}
-        <div class="success-msg">
-          <p class="success-head">Message received.</p>
-          <p>Thanks, we'll be in touch soon. Check your inbox for a confirmation.</p>
-          <button class="pill-btn" on:click={() => sent = false}>Send another</button>
-        </div>
-      {:else}
-        <form class="form" on:submit|preventDefault={handleSubmit} novalidate>
-          <div class="row-two">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" required autocomplete="name" />
+      <Reveal>
+        <div class="form-card card">
+          {#if sent}
+            <div class="success">
+              <div class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="36" height="36">
+                  <path
+                    d="M5 12.5l4.5 4.5L19 7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Message received.</h3>
+              <p>Thanks — we'll be in touch soon. Check your inbox for a confirmation.</p>
+              <button class="btn btn-ghost" on:click={() => (sent = false)}>
+                Send another
+              </button>
             </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required autocomplete="email" />
-            </div>
-          </div>
+          {:else}
+            <form class="form" on:submit|preventDefault={handleSubmit} novalidate>
+              <div class="row-two">
+                <div class="field">
+                  <input id="name" name="name" type="text" required autocomplete="name" placeholder=" " />
+                  <label for="name">Name</label>
+                </div>
+                <div class="field">
+                  <input id="email" name="email" type="email" required autocomplete="email" placeholder=" " />
+                  <label for="email">Email</label>
+                </div>
+              </div>
 
-          <div class="row-two">
-            <div class="field">
-              <label for="phone">Phone <span class="optional">(optional)</span></label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" />
-            </div>
-            <div class="field">
-              <label for="format">What do you have?</label>
-              <input
-                id="format"
-                name="format"
-                type="text"
-                placeholder="e.g. 12 VHS tapes, a box of photos…"
-              />
-            </div>
-          </div>
+              <div class="row-two">
+                <div class="field">
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder=" " />
+                  <label for="phone">Phone <span class="opt">(optional)</span></label>
+                </div>
+                <div class="field">
+                  <input id="format" name="format" type="text" placeholder=" " />
+                  <label for="format">What do you have?</label>
+                </div>
+              </div>
 
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
+              <div class="field">
+                <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                <label for="message">Message</label>
+              </div>
 
-          {#if error}
-            <p class="error-msg">{error}</p>
+              {#if error}
+                <p class="error">{error}</p>
+              {/if}
+
+              <button type="submit" class="btn btn-primary btn-lg" disabled={sending}>
+                {sending ? 'Sending…' : 'Send it'}
+                {#if !sending}<span aria-hidden="true">↗</span>{/if}
+              </button>
+            </form>
           {/if}
+        </div>
+      </Reveal>
 
-          <button type="submit" class="pill-btn" disabled={sending}>
-            {sending ? 'Sending…' : 'Send it ↗'}
-          </button>
-        </form>
-      {/if}
-
-      <aside class="aside">
-        <dl>
-          <div class="aside-item">
-            <dt>Email</dt>
-            <dd>hello@memorysafe.com</dd>
-          </div>
-          <div class="aside-item">
-            <dt>Turnaround</dt>
-            <dd>5–10 business days<br />Rush available</dd>
-          </div>
-          <div class="aside-item">
-            <dt>Location</dt>
-            <dd>[City, State]<br />Local drop-off welcome</dd>
-          </div>
-          <div class="aside-item">
-            <dt>Shipping</dt>
-            <dd>
-              Nationwide. Ship your media to us and we'll send return instructions after
-              receipt.
-            </dd>
-          </div>
-        </dl>
-      </aside>
+      <Reveal delay={100}>
+        <aside class="aside card">
+          <h3>Quick facts</h3>
+          <dl>
+            <div>
+              <dt><span class="i">✉</span> Email</dt>
+              <dd><a href="mailto:hello@memorysafe.com">hello@memorysafe.com</a></dd>
+            </div>
+            <div>
+              <dt><span class="i">⏱</span> Turnaround</dt>
+              <dd>5–10 business days<br />Rush available</dd>
+            </div>
+            <div>
+              <dt><span class="i">📍</span> Location</dt>
+              <dd>[City, State]<br />Local drop-off welcome</dd>
+            </div>
+            <div>
+              <dt><span class="i">📦</span> Shipping</dt>
+              <dd>Nationwide. Return instructions sent after receipt.</dd>
+            </div>
+          </dl>
+        </aside>
+      </Reveal>
     </div>
   </div>
 </section>
 
 <style>
-  section {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem 6rem;
-  }
-
-  h2 {
-    font-size: 2.75rem;
-    margin: 0 0 0.4rem 0;
-  }
-
-  .sub {
-    font-size: 1.05rem;
-    margin: 0 0 3rem 0;
-    opacity: 0.7;
-  }
-
   .layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 4rem;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 1.75rem;
     align-items: start;
   }
 
-  /* ── Success state ── */
-  .success-msg {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  .form-card {
+    padding: 2.25rem 2.25rem 2rem;
+    background: var(--bg);
   }
 
-  .success-head {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .success-msg p:not(.success-head) {
-    margin: 0;
-    opacity: 0.75;
-  }
-
-  /* ── Form ── */
   .form {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.25rem;
   }
 
   .row-two {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.75rem;
+    gap: 1rem;
   }
 
   .field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    position: relative;
   }
 
-  label {
-    font-size: 0.85rem;
-    opacity: 0.65;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .optional {
-    font-size: 0.8em;
-    opacity: 0.7;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-
-  input,
-  textarea {
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.35);
-    padding: 0.4rem 0;
-    font-size: 1rem;
+  .field input,
+  .field textarea {
     width: 100%;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 0.95rem 0.55rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--ink);
     outline: none;
-    color: black;
+    transition: border-color var(--dur-fast) var(--ease),
+      box-shadow var(--dur-fast) var(--ease),
+      background var(--dur-fast) var(--ease);
     resize: vertical;
   }
 
-  input::placeholder,
-  textarea::placeholder {
-    opacity: 0.4;
+  .field textarea {
+    padding-top: 1.5rem;
+    min-height: 140px;
+    line-height: 1.55;
   }
 
-  input:focus,
-  textarea:focus {
-    border-bottom-color: black;
-  }
-
-  textarea {
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    padding: 0.6rem;
-  }
-
-  textarea:focus {
-    border-color: black;
-  }
-
-  /* ── Error message ── */
-  .error-msg {
-    margin: 0;
+  .field label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
     font-size: 0.95rem;
-    border-left: 3px solid black;
-    padding-left: 0.75rem;
-    opacity: 0.85;
+    color: var(--ink-mute);
+    pointer-events: none;
+    transform-origin: left top;
+    transition: transform var(--dur-fast) var(--ease),
+      color var(--dur-fast) var(--ease);
   }
 
-  /* ── Submit button ── */
-  .pill-btn {
+  .field input:focus,
+  .field textarea:focus {
+    border-color: var(--accent);
+    background: var(--bg);
+    box-shadow: 0 0 0 4px rgba(184, 85, 56, 0.12);
+  }
+
+  .field input:focus + label,
+  .field input:not(:placeholder-shown) + label,
+  .field textarea:focus + label,
+  .field textarea:not(:placeholder-shown) + label {
+    transform: translateY(-0.75rem) scale(0.78);
+    color: var(--accent);
+  }
+
+  .opt {
+    font-size: 0.85em;
+    color: var(--ink-mute);
+  }
+
+  .error {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    background: #fbe7e0;
+    color: #7a2d1a;
+    font-size: 0.92rem;
+  }
+
+  .btn[type='submit'] {
     align-self: flex-start;
-    font-size: 1.25rem;
-    background: blanchedalmond;
-    border: 2px solid black;
-    border-radius: 999px;
-    padding: 0.45em 1.75em;
-    cursor: pointer;
-    color: black;
   }
 
-  .pill-btn:hover:not(:disabled) {
-    background: #f0d898;
-  }
-
-  .pill-btn:disabled {
-    opacity: 0.5;
-    cursor: default;
-  }
-
-  /* ── Aside ── */
-  .aside {
-    border-left: 1px solid rgba(0, 0, 0, 0.15);
-    padding-left: 2.5rem;
-  }
-
-  dl {
+  /* Success */
+  .success {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 1rem 0;
+  }
+  .check {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .success h3 {
+    font-size: 1.6rem;
     margin: 0;
-    padding: 0;
+  }
+  .success p {
+    margin: 0;
+    color: var(--ink-soft);
   }
 
-  .aside-item dt {
-    font-size: 0.8rem;
+  /* Aside */
+  .aside {
+    padding: 1.75rem;
+    background: var(--bg);
+  }
+
+  .aside h3 {
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    opacity: 0.55;
+    color: var(--ink-mute);
+    margin: 0 0 1.25rem;
+  }
+
+  .aside dl {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin: 0;
+  }
+
+  .aside dt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
     margin-bottom: 0.3rem;
   }
 
-  .aside-item dd {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.65;
+  .aside dt .i {
+    font-size: 0.95rem;
+    line-height: 1;
   }
 
-  /* ── Responsive ── */
-  @media (max-width: 900px) {
+  .aside dd {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  .aside dd a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .aside dd a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  @media (max-width: 880px) {
     .layout {
       grid-template-columns: 1fr;
-      gap: 3rem;
     }
-
-    .aside {
-      border-left: none;
-      border-top: 1px solid rgba(0, 0, 0, 0.15);
-      padding-left: 0;
-      padding-top: 2rem;
-    }
-
-    dl {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    h2 { font-size: 2.1rem; }
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 520px) {
+    .form-card {
+      padding: 1.5rem 1.25rem;
+    }
     .row-two {
       grid-template-columns: 1fr;
-    }
-
-    dl {
-      grid-template-columns: 1fr;
-    }
-
-    .pill-btn {
-      align-self: stretch;
-      text-align: center;
     }
   }
 </style>

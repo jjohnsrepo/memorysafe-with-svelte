@@ -1,96 +1,189 @@
-<section id="about">
+<script>
+  import Reveal from '$lib/Reveal.svelte';
+</script>
+
+<section id="about" class="section section--alt">
   <div class="wrapper">
     <div class="layout">
-      <div class="text-col">
-        <h2>About MemorySafe</h2>
-        <p>
-          MemorySafe started as a personal project. I found a box of VHS tapes at my parents'
-          house — birthdays, Christmases, vacations — all slowly deteriorating in a closet. The big
-          chains quoted me hundreds of dollars and weeks of waiting. That felt wrong.
-        </p>
-        <p>
-          So I bought the equipment. Learned the process. Started with family, then friends, then
-          strangers who found me through word of mouth. Now MemorySafe has rescued thousands of hours
-          of irreplaceable footage from tapes, reels, and shoeboxes of prints.
-        </p>
-        <p>
-          I handle every job personally. That means your memories are in the hands of someone who
-          genuinely cares — not a technician on a conveyor belt.
-        </p>
-        <a href="/about" class="text-link">More about me and my process →</a>
-      </div>
+      <Reveal>
+        <div class="text">
+          <p class="eyebrow">About MemorySafe</p>
+          <h2 class="section-title">A one-person studio, on purpose.</h2>
 
-      <div class="media-col">
-        <img
-          src="https://placehold.co/440x520/FFDEAB/7A5C1E?text=Founder+Photo"
-          alt="Founder of MemorySafe"
-          class="portrait"
-        />
-      </div>
+          <p class="lede">
+            MemorySafe started with a box of VHS tapes at my parents' house &mdash;
+            birthdays, Christmases, vacations &mdash; all slowly deteriorating in a
+            closet. The big chains quoted hundreds of dollars and weeks of waiting.
+            That felt wrong.
+          </p>
+          <p>
+            So I bought the equipment. Learned the process. Started with family,
+            then friends, then strangers who found me by word of mouth. Today,
+            MemorySafe has rescued thousands of hours of irreplaceable footage from
+            tapes, reels, and shoeboxes of prints.
+          </p>
+          <p>
+            Every job is handled personally &mdash; no technicians on a conveyor
+            belt, no outsourcing. Your memories are kept by someone who genuinely
+            cares about getting them right.
+          </p>
+          <a href="/about" class="btn btn-ghost">Read the full story →</a>
+        </div>
+      </Reveal>
+
+      <Reveal delay={120}>
+        <div class="media">
+          <figure class="portrait-frame">
+            <div class="tape-strip"></div>
+            <img
+              src="https://placehold.co/520x640/1e1a15/e8c9a8?text=Founder"
+              alt="Founder of MemorySafe"
+            />
+            <figcaption>
+              <span class="signature">— the founder</span>
+            </figcaption>
+          </figure>
+
+          <aside class="stats">
+            <div>
+              <span class="num">7</span>
+              <span class="lbl">day avg. turnaround</span>
+            </div>
+            <div>
+              <span class="num">1,000+</span>
+              <span class="lbl">hours digitized</span>
+            </div>
+            <div>
+              <span class="num">100%</span>
+              <span class="lbl">personally handled</span>
+            </div>
+          </aside>
+        </div>
+      </Reveal>
     </div>
   </div>
 </section>
 
 <style>
-  section {
-    background: rgb(255, 222, 171);
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-  }
-
   .layout {
     display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 4rem;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
     align-items: center;
   }
 
-  h2 {
-    font-size: 2.75rem;
-    margin: 0 0 1.5rem 0;
+  .text .lede {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.45rem;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0 0 1.4rem 0;
+    max-width: 36ch;
   }
 
-  .text-col p {
-    font-size: 1.05rem;
-    line-height: 1.8;
+  .text p {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
     margin: 0 0 1.1rem 0;
-    opacity: 0.85;
+    max-width: 58ch;
   }
 
-  .text-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    text-decoration: underline;
-    color: black;
-    opacity: 0.7;
+  .text .btn {
+    margin-top: 1rem;
   }
 
-  .text-link:hover {
-    opacity: 1;
+  .media {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
   }
 
-  .portrait {
+  .portrait-frame {
+    position: relative;
+    background: var(--bg);
+    padding: 14px 14px 56px;
+    border-radius: 4px;
+    margin: 0;
+    max-width: 380px;
     width: 100%;
-    display: block;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    transform: rotate(-1.5deg);
+    box-shadow: var(--shadow-lg);
   }
 
-  @media (max-width: 900px) {
+  .tape-strip {
+    position: absolute;
+    top: -10px;
+    right: 18px;
+    width: 80px;
+    height: 22px;
+    background: rgba(200, 159, 60, 0.55);
+    border: 1px solid rgba(200, 159, 60, 0.3);
+    transform: rotate(8deg);
+  }
+
+  .portrait-frame img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+
+  figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    text-align: center;
+  }
+
+  .signature {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .stats > div {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 0.75rem;
+    text-align: center;
+  }
+
+  .stats .num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+
+  .stats .lbl {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+
+  @media (max-width: 880px) {
     .layout {
       grid-template-columns: 1fr;
-      gap: 2.5rem;
+      gap: 3rem;
     }
-
-    .media-col {
-      max-width: 360px;
-    }
-
-    h2 { font-size: 2.1rem; }
   }
 </style>

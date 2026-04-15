@@ -1,207 +1,259 @@
-<section id="pricing">
+<script>
+  import Reveal from '$lib/Reveal.svelte';
+
+  const rates = [
+    { label: 'VHS / Betamax', price: '$25', unit: 'per tape' },
+    { label: '8mm / Super 8 film', price: '$30', unit: 'per reel' },
+    { label: 'Hi8 / Video8', price: '$22', unit: 'per tape' },
+    { label: 'Mini DV', price: '$18', unit: 'per tape' },
+    { label: 'Photographs', price: '$0.45', unit: 'per print' },
+    { label: '35mm slides', price: '$0.65', unit: 'per slide' },
+    { label: 'Film negatives', price: '$0.50', unit: 'per frame' },
+    { label: 'Audio cassettes', price: '$18', unit: 'per tape' },
+  ];
+
+  const bundles = [
+    { qty: '5–9 items', off: '10% off' },
+    { qty: '10–19 items', off: '20% off' },
+    { qty: '20+ items', off: 'Custom quote' },
+  ];
+
+  const addons = [
+    { name: 'USB drive delivery', price: '$12' },
+    { name: 'Rush (3 days)', price: '+50%' },
+    { name: '1-yr cloud backup', price: '$8' },
+  ];
+</script>
+
+<section id="pricing" class="section">
   <div class="wrapper">
-    <h2>Pricing</h2>
-    <p class="sub">Flat rates. No hidden fees. Originals returned at no extra charge.</p>
+    <Reveal>
+      <p class="eyebrow">Pricing</p>
+      <h2 class="section-title">Flat rates. No surprises.</h2>
+      <p class="section-sub">
+        One price per item. Originals returned at no extra charge. Minimum order $35.
+      </p>
+    </Reveal>
 
     <div class="layout">
-      <div class="table-col">
-        <table>
-          <thead>
-            <tr>
-              <th>Format</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>VHS / Betamax</td>
-              <td>$25 / tape</td>
-            </tr>
-            <tr>
-              <td>8mm / Super 8 Film</td>
-              <td>$30 / reel</td>
-            </tr>
-            <tr>
-              <td>Hi8 / Video8</td>
-              <td>$22 / tape</td>
-            </tr>
-            <tr>
-              <td>Mini DV</td>
-              <td>$18 / tape</td>
-            </tr>
-            <tr>
-              <td>Photographs</td>
-              <td>$0.45 / print</td>
-            </tr>
-            <tr>
-              <td>35mm Slides</td>
-              <td>$0.65 / slide</td>
-            </tr>
-            <tr>
-              <td>Film Negatives</td>
-              <td>$0.50 / frame</td>
-            </tr>
-            <tr>
-              <td>Audio Cassette</td>
-              <td>$18 / tape</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="min-note">Minimum order: $35</p>
-      </div>
-
-      <div class="side-col">
-        <div class="side-block">
-          <h3>Bundle Discounts</h3>
-          <ul>
-            <li>5–9 items &mdash; <strong>10% off</strong></li>
-            <li>10–19 items &mdash; <strong>20% off</strong></li>
-            <li>20+ items &mdash; <strong>contact for a quote</strong></li>
+      <Reveal>
+        <article class="card rates-card">
+          <header class="rates-head">
+            <h3>Per-item rates</h3>
+            <span class="badge">Most popular</span>
+          </header>
+          <ul class="rates">
+            {#each rates as r}
+              <li>
+                <span class="label">{r.label}</span>
+                <span class="price">
+                  <strong>{r.price}</strong>
+                  <em>{r.unit}</em>
+                </span>
+              </li>
+            {/each}
           </ul>
-        </div>
+          <p class="minor">Minimum order: <strong>$35</strong></p>
+        </article>
+      </Reveal>
 
-        <div class="side-block">
-          <h3>Add-Ons</h3>
-          <ul>
-            <li>USB drive delivery &mdash; <strong>$12</strong></li>
-            <li>Rush processing (3 days) &mdash; <strong>+50%</strong></li>
-            <li>1-year cloud backup &mdash; <strong>$8</strong></li>
-          </ul>
-        </div>
+      <div class="side">
+        <Reveal delay={80}>
+          <article class="card side-card">
+            <h3>Bundle discounts</h3>
+            <ul class="bundle-list">
+              {#each bundles as b}
+                <li>
+                  <span>{b.qty}</span>
+                  <strong>{b.off}</strong>
+                </li>
+              {/each}
+            </ul>
+          </article>
+        </Reveal>
 
-        <div class="side-block cta-block">
-          <p>Questions about your format or quantity?</p>
-          <a href="#contact" class="pill-btn">Get in touch ↓</a>
-        </div>
+        <Reveal delay={140}>
+          <article class="card side-card">
+            <h3>Add-ons</h3>
+            <ul class="bundle-list">
+              {#each addons as a}
+                <li>
+                  <span>{a.name}</span>
+                  <strong>{a.price}</strong>
+                </li>
+              {/each}
+            </ul>
+          </article>
+        </Reveal>
+
+        <Reveal delay={200}>
+          <article class="card cta-card">
+            <p>Unusual format or large archive?</p>
+            <a href="/contact" class="btn btn-primary">Get a custom quote →</a>
+          </article>
+        </Reveal>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  section {
-    background: rgb(255, 222, 171);
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-  }
-
-  h2 {
-    font-size: 2.75rem;
-    margin: 0 0 0.4rem 0;
-  }
-
-  .sub {
-    font-size: 1.05rem;
-    margin: 0 0 3rem 0;
-    opacity: 0.7;
-  }
-
   .layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 1.75rem;
     align-items: start;
   }
 
-  /* ── Table ── */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1rem;
-  }
-
-  th {
-    background: blanchedalmond;
-    text-align: left;
-    padding: 0.6rem 0.9rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    font-weight: bold;
-  }
-
-  td {
-    padding: 0.55rem 0.9rem;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  tr:nth-child(even) td {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  td:last-child {
-    white-space: nowrap;
-    font-weight: bold;
-  }
-
-  .min-note {
-    font-size: 0.85rem;
-    margin: 0.75rem 0 0 0;
-    opacity: 0.6;
-  }
-
-  /* ── Side column ── */
-  .side-col {
+  .side {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.25rem;
   }
 
-  .side-block h3 {
+  .card {
+    background: var(--bg);
+  }
+
+  .rates-card {
+    padding: 2rem 2.25rem;
+  }
+
+  .rates-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+  }
+
+  .rates-head h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4em 0.85em;
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+    border-radius: 999px;
+  }
+
+  .rates {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .rates li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .rates .label {
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .price {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .price strong {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .price em {
+    font-style: normal;
+    font-size: 0.82rem;
+    color: var(--ink-mute);
+  }
+
+  .minor {
+    margin: 1.2rem 0 0 0;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .side-card {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .side-card h3 {
     font-size: 1.2rem;
-    margin: 0 0 0.75rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    margin: 0 0 1rem 0;
   }
 
-  .side-block ul {
+  .bundle-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    gap: 0.7rem;
   }
 
-  /* ── CTA ── */
-  .cta-block {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    padding-top: 2rem;
+  .bundle-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
   }
 
-  .cta-block p {
-    margin: 0 0 1rem 0;
-    font-size: 1rem;
+  .bundle-list li strong {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 500;
   }
 
-  .pill-btn {
-    display: inline-block;
-    font-size: 1.25rem;
-    background: blanchedalmond;
-    border: 2px solid black;
-    border-radius: 999px;
-    padding: 0.4em 1.5em;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
+  .cta-card {
+    padding: 1.75rem;
+    background: linear-gradient(135deg, var(--accent-soft) 0%, #f6e3c8 100%);
+    border-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .pill-btn:hover {
-    background: #f0d898;
-    text-decoration: none;
+  .cta-card p {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--ink);
+    line-height: 1.35;
   }
 
-  @media (max-width: 800px) {
+  .cta-card .btn {
+    align-self: flex-start;
+  }
+
+  @media (max-width: 880px) {
     .layout {
       grid-template-columns: 1fr;
-      gap: 2.5rem;
     }
+  }
 
-    h2 { font-size: 2.1rem; }
+  @media (max-width: 520px) {
+    .rates-card, .side-card {
+      padding: 1.5rem 1.25rem;
+    }
   }
 </style>

@@ -1,10 +1,16 @@
 <script>
   import '../app.css';
+  import SiteNav from '$lib/SiteNav.svelte';
+  import SiteFooter from '$lib/SiteFooter.svelte';
 </script>
+
+<SiteNav />
 
 <main>
   <slot />
 </main>
+
+<SiteFooter />
 
 <style>
   main {

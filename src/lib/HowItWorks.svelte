@@ -1,46 +1,46 @@
 <script>
-  import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
   import { onMount, onDestroy } from 'svelte';
+  import Reveal from '$lib/Reveal.svelte';
 
   const steps = [
     {
       num: '01',
-      title: 'Ship Us Your Media',
-      body: "Pack your tapes, reels, or photos and send them to our studio. We'll email you a confirmation within 24 hours of receipt and keep you updated throughout the process.",
+      title: 'Ship us your media',
+      body: "Pack up your tapes, reels, or photos and send them over. We email a confirmation within 24 hours of receipt and keep you updated along the way.",
+      icon: '📦',
     },
     {
       num: '02',
-      title: 'We Do the Work',
-      body: 'Every item is processed individually on professional equipment — no batch jobs, no rushing. Your footage gets the careful, personal attention it deserves.',
+      title: 'We do the work',
+      body: 'Every item is inspected and processed individually on professional equipment — no batch jobs, no rushing. Your footage gets the careful attention it deserves.',
+      icon: '🎞',
     },
     {
       num: '03',
-      title: 'Download or Delivery',
-      body: "You'll receive a secure download link within 5–10 business days. Need a physical copy? Add a USB drive to your order. Originals are always returned.",
+      title: 'Download or delivery',
+      body: "You'll receive a secure download link within 5–10 business days. Prefer physical? Add a USB drive to your order. Originals are always returned.",
+      icon: '✨',
     },
   ];
 
   let active = 0;
-  let dir = 1; // 1 = forward (slide left), -1 = backward (slide right)
+  /** @type {ReturnType<typeof setInterval> | undefined} */
   let timer;
-  const INTERVAL = 4000;
+  const INTERVAL = 5000;
 
-  function go(i, d) {
-    dir = d;
+  /** @param {number} i */
+  function go(i) {
     active = i;
   }
 
   function next() {
-    go((active + 1) % steps.length, 1);
+    go((active + 1) % steps.length);
   }
 
-  function prev() {
-    go((active - 1 + steps.length) % steps.length, -1);
-  }
-
+  /** @param {number} i */
   function jumpTo(i) {
-    if (i === active) return;
-    go(i, i > active ? 1 : -1);
+    go(i);
     restart();
   }
 
@@ -53,227 +53,261 @@
     timer = setInterval(next, INTERVAL);
   });
 
-  onDestroy(() => {
-    clearInterval(timer);
-  });
+  onDestroy(() => clearInterval(timer));
 </script>
 
-<section id="how-it-works">
+<section id="how-it-works" class="section">
   <div class="wrapper">
+    <Reveal>
+      <p class="eyebrow">How it works</p>
+      <h2 class="section-title">Simple, personal, end&#8209;to&#8209;end.</h2>
+      <p class="section-sub">
+        From your shelf to a crisp digital file — with one pair of hands on it the whole way.
+      </p>
+    </Reveal>
 
-    <div class="header-row">
-      <div>
-        <h2>How It Works</h2>
-        <p class="sub">Simple, personal, and end-to-end.</p>
-      </div>
-      <div class="nav-btns">
-        <button class="arrow-btn" on:click={() => { prev(); restart(); }} aria-label="Previous step">←</button>
-        <button class="arrow-btn" on:click={() => { next(); restart(); }} aria-label="Next step">→</button>
-      </div>
-    </div>
-
-    <!-- Fixed-height container so slides don't cause layout shifts -->
-    <div class="slider" aria-live="polite" aria-atomic="true">
-      {#key active}
+    <Reveal delay={100}>
+      <div class="timeline" role="tablist" aria-label="Our process">
+        <div class="track" aria-hidden="true"></div>
         <div
-          class="slide"
-          in:fly={{ x: dir * 90, duration: 380, opacity: 0 }}
-          out:fly={{ x: dir * -90, duration: 380, opacity: 0 }}
-        >
-          <span class="num" aria-hidden="true">{steps[active].num}</span>
-          <h3>{steps[active].title}</h3>
-          <p>{steps[active].body}</p>
+          class="progress"
+          aria-hidden="true"
+          style="width: {(active / (steps.length - 1)) * 100}%"
+        ></div>
+
+        {#each steps as step, i}
+          <button
+            class="node"
+            class:active={i === active}
+            class:done={i < active}
+            role="tab"
+            aria-selected={i === active}
+            aria-controls="step-panel"
+            on:click={() => jumpTo(i)}
+          >
+            <span class="circle">
+              {#if i < active}
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                  <path
+                    d="M5 12l4 4 10-10"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              {:else}
+                <span class="num">{step.num}</span>
+              {/if}
+            </span>
+            <span class="label">{step.title}</span>
+          </button>
+        {/each}
+      </div>
+    </Reveal>
+
+    <div class="panel" id="step-panel" aria-live="polite">
+      {#key active}
+        <div class="panel-inner" in:fade={{ duration: 320 }}>
+          <div class="icon" aria-hidden="true">{steps[active].icon}</div>
+          <div>
+            <div class="step-meta">Step {active + 1} of {steps.length}</div>
+            <h3>{steps[active].title}</h3>
+            <p>{steps[active].body}</p>
+          </div>
         </div>
       {/key}
     </div>
 
-    <!-- Progress dots -->
-    <div class="controls">
-      {#each steps as step, i}
-        <button
-          class="dot"
-          class:dot-active={i === active}
-          on:click={() => jumpTo(i)}
-          aria-label="Go to step {i + 1}: {step.title}"
-          aria-current={i === active ? 'step' : undefined}
-        ></button>
-      {/each}
-      <span class="step-label">{active + 1} / {steps.length}</span>
+    <div class="foot">
+      <p>Average turnaround: <strong>7 business days.</strong> Rush available.</p>
     </div>
-
-    <p class="footer-note">
-      Average turnaround: <strong>7 business days.</strong> Rush processing available.
-    </p>
   </div>
 </section>
 
 <style>
-  section {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  .timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 2rem 0 3rem;
+    padding: 0 0 0;
   }
 
-  .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
+  .track,
+  .progress {
+    position: absolute;
+    top: 22px;
+    height: 2px;
+    left: 10%;
+    right: 10%;
+    border-radius: 2px;
   }
 
-  /* ── Header row: title left, arrows right ── */
-  .header-row {
+  .track {
+    background: var(--border);
+  }
+
+  .progress {
+    background: var(--accent);
+    width: 0;
+    max-width: 80%;
+    transition: width var(--dur-slow) var(--ease);
+    left: 10%;
+    right: auto;
+  }
+
+  .node {
+    position: relative;
+    z-index: 1;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 3rem;
-  }
-
-  h2 {
-    font-size: 2.75rem;
-    margin: 0 0 0.3rem 0;
-  }
-
-  .sub {
-    font-size: 1.05rem;
-    margin: 0;
-    opacity: 0.7;
-  }
-
-  .nav-btns {
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  .arrow-btn {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
     background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.1rem;
+    border: none;
+    padding: 0 0.5rem;
     cursor: pointer;
+    font-family: inherit;
+    color: var(--ink-soft);
+    transition: color var(--dur-fast) var(--ease);
+  }
+
+  .circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--border-strong);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--ink-soft);
+    transition: all var(--dur) var(--ease);
   }
 
-  .arrow-btn:hover {
-    border-color: black;
-    background: rgba(0, 0, 0, 0.05);
+  .node.active .circle {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff8ef;
+    box-shadow: 0 0 0 6px rgba(184, 85, 56, 0.15);
+    transform: scale(1.05);
   }
 
-  /* ── Slide container — fixed height prevents layout shift ── */
-  .slider {
-    position: relative;
-    overflow: hidden;
-    height: 220px;
-  }
-
-  /* Both slides are absolute so they overlap cleanly during transition */
-  .slide {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
+  .node.done .circle {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
   }
 
   .num {
-    font-size: 4.5rem;
-    font-weight: bold;
-    line-height: 1;
-    color: rgba(0, 0, 0, 0.08);
-    letter-spacing: -0.05em;
-    flex-shrink: 0;
+    font-size: 0.95rem;
   }
 
-  .slide h3 {
-    font-size: 1.4rem;
-    margin: 0;
-    flex-shrink: 0;
+  .label {
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-align: center;
+    max-width: 18ch;
   }
 
-  .slide p {
-    font-size: 1rem;
-    line-height: 1.75;
-    margin: 0;
-    opacity: 0.8;
+  .node.active {
+    color: var(--ink);
   }
 
-  /* ── Dot controls ── */
-  .controls {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 2rem;
-  }
-
-  .dot {
-    width: 28px;
-    height: 6px;
-    border: none;
-    background: rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    padding: 0;
+  /* Active panel */
+  .panel {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2.25rem;
+    min-height: 170px;
     position: relative;
     overflow: hidden;
   }
 
-  /* Fill bar animates from left to right over the interval duration */
-  .dot-active {
-    background: rgba(0, 0, 0, 0.15);
+  .panel-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
   }
 
-  .dot-active::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: black;
-    transform-origin: left;
-    animation: fill 4s linear forwards;
+  .icon {
+    font-size: 2.4rem;
+    line-height: 1;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
-  @keyframes fill {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
+  .step-meta {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
   }
 
-  .step-label {
-    font-size: 0.85rem;
-    opacity: 0.4;
-    margin-left: 0.25rem;
+  .panel h3 {
+    font-size: 1.6rem;
+    margin: 0 0 0.5rem 0;
   }
 
-  /* ── Footer note ── */
-  .footer-note {
-    margin: 2.5rem 0 0 0;
-    font-size: 1rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    opacity: 0.75;
+  .panel p {
+    margin: 0;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-size: 1.02rem;
   }
 
-  /* ── Responsive ── */
-  @media (max-width: 750px) {
-    .slider {
-      height: 260px; /* more vertical room on narrow screens */
+  .foot {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+  }
+
+  @media (max-width: 720px) {
+    .timeline {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
     }
-
-    .num {
-      font-size: 3rem;
+    .track, .progress {
+      display: none;
     }
-
-    h2 { font-size: 2.1rem; }
-
-    .header-row {
-      align-items: flex-start;
-      flex-direction: column;
+    .node {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 0.9rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius);
+      text-align: left;
+    }
+    .node.active {
+      background: var(--bg-alt);
+    }
+    .label {
+      text-align: left;
+      max-width: none;
+    }
+    .panel {
+      padding: 1.5rem;
+    }
+    .panel-inner {
+      grid-template-columns: 1fr;
       gap: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .slider {
-      height: 300px;
     }
   }
 </style>

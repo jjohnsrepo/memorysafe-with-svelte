@@ -1,135 +1,180 @@
 <script>
+  import Reveal from '$lib/Reveal.svelte';
+
   const services = [
     {
       title: 'VHS & Betamax',
       desc: 'Home recordings from the 70s through the 90s. Standard play, long play — we handle them all.',
-      img: 'https://placehold.co/400x240/FFDEAB/7A5C1E?text=VHS+%26+Betamax',
+      img: 'https://placehold.co/640x420/1e1a15/e8c9a8?text=VHS+%26+Betamax',
       alt: 'Stack of VHS and Betamax tapes',
+      tag: 'Tapes',
     },
     {
       title: '8mm & Super 8 Film',
-      desc: 'Frame-by-frame transfer of classic reels from the 1950s through the 1980s. Color and B&W.',
-      img: 'https://placehold.co/400x240/FFDEAB/7A5C1E?text=8mm+%26+Super+8',
+      desc: 'Frame-by-frame transfer of classic reels from the 1950s–1980s. Color and black & white.',
+      img: 'https://placehold.co/640x420/55493b/fbf6ec?text=8mm+%26+Super+8',
       alt: '8mm and Super 8 film reels',
+      tag: 'Film',
     },
     {
       title: 'Photographs & Slides',
-      desc: 'Individual prints, shoeboxes of photos, and 35mm slide carousels — all scanned at high resolution.',
-      img: 'https://placehold.co/400x240/FFDEAB/7A5C1E?text=Photos+%26+Slides',
+      desc: 'Individual prints, shoeboxes of photos, and 35mm carousels — scanned at high resolution.',
+      img: 'https://placehold.co/640x420/b85538/fbf6ec?text=Photos+%26+Slides',
       alt: 'Photographs and 35mm slides',
+      tag: 'Print',
     },
     {
       title: 'Audio Cassettes',
       desc: 'Mixtapes, recorded conversations, voice memos. Transferred to lossless audio files.',
-      img: 'https://placehold.co/400x240/FFDEAB/7A5C1E?text=Audio+Cassettes',
+      img: 'https://placehold.co/640x420/c89f3c/1e1a15?text=Audio',
       alt: 'Audio cassette tapes',
+      tag: 'Audio',
     },
     {
-      title: 'Hi8, Video8 & Mini DV',
-      desc: 'Camcorder tapes from the 90s and 2000s. Full-resolution digital transfer, no generational loss.',
-      img: 'https://placehold.co/400x240/FFDEAB/7A5C1E?text=Camcorder+Tapes',
+      title: 'Hi8 · Video8 · Mini DV',
+      desc: 'Camcorder tapes from the 90s and 2000s. Full-resolution digital, no generational loss.',
+      img: 'https://placehold.co/640x420/7b8a6a/fbf6ec?text=Camcorder',
       alt: 'Hi8 and Mini DV camcorder tapes',
+      tag: 'Video',
     },
     {
       title: 'Film Negatives',
       desc: '35mm, 120 medium format, and APS negatives scanned to high-resolution digital files.',
-      img: 'https://placehold.co/400x240/FFDEAB/7A5C1E?text=Film+Negatives',
-      alt: '35mm film negatives on a light table',
+      img: 'https://placehold.co/640x420/e8c9a8/55493b?text=Negatives',
+      alt: '35mm film negatives',
+      tag: 'Film',
     },
   ];
 </script>
 
-<section id="services">
+<section id="services" class="section section--alt">
   <div class="wrapper">
-    <h2>What We Digitize</h2>
-    <p class="sub">All major analog formats. If yours isn't listed, just ask.</p>
+    <Reveal>
+      <p class="eyebrow">What we digitize</p>
+      <h2 class="section-title">Every format that mattered.</h2>
+      <p class="section-sub">
+        All the major analog formats, handled with care on professional-grade
+        equipment. If yours isn't listed, just ask — chances are we can help.
+      </p>
+    </Reveal>
+
     <div class="grid">
-      {#each services as s}
-        <article class="card">
-          <img src={s.img} alt={s.alt} />
-          <div class="card-body">
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        </article>
+      {#each services as s, i}
+        <Reveal delay={i * 70}>
+          <article class="service card card--hover">
+            <div class="media">
+              <img src={s.img} alt={s.alt} loading="lazy" />
+              <span class="tag">{s.tag}</span>
+            </div>
+            <div class="body">
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          </article>
+        </Reveal>
       {/each}
     </div>
+
+    <Reveal delay={180}>
+      <p class="foot">
+        Don't see your format? <a href="/contact">Ask us</a> — chances are we handle it.
+      </p>
+    </Reveal>
   </div>
 </section>
 
 <style>
-  section {
-    background: rgb(255, 222, 171);
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-  }
-
-  h2 {
-    font-size: 2.75rem;
-    margin: 0 0 0.4rem 0;
-  }
-
-  .sub {
-    font-size: 1.05rem;
-    margin: 0 0 3rem 0;
-    opacity: 0.7;
-  }
-
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 
-  .card {
+  :global(#services .grid > .reveal) {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    background: blanchedalmond;
   }
 
-  .card img {
+  .service {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg);
+  }
+
+  .media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg-alt);
+  }
+
+  .media img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
-    display: block;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 700ms var(--ease);
   }
 
-  .card-body {
-    padding: 1.25rem;
-    flex: 1;
+  .service:hover .media img {
+    transform: scale(1.04);
+  }
+
+  .tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(251, 246, 236, 0.92);
+    color: var(--ink);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35em 0.8em;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+
+  .body {
+    padding: 1.4rem 1.5rem 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    flex: 1;
   }
 
-  .card-body h3 {
+  .body h3 {
+    font-size: 1.35rem;
+    font-family: var(--font-display);
+    font-weight: 500;
     margin: 0;
-    font-size: 1.2rem;
   }
 
-  .card-body p {
+  .body p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.65;
-    opacity: 0.8;
   }
 
-  @media (max-width: 900px) {
+  .foot {
+    margin: 3rem 0 0;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  .foot a {
+    font-weight: 600;
+  }
+
+  @media (max-width: 960px) {
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
-
-    h2 { font-size: 2.1rem; }
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 600px) {
     .grid {
       grid-template-columns: 1fr;
     }
