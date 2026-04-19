@@ -20,9 +20,6 @@
 
   <div class="wrapper hero-inner">
     <div class="hero-copy">
-      <Reveal>
-        <p class="eyebrow">A one-person studio · Est. 2019</p>
-      </Reveal>
 
       <Reveal delay={80}>
         <h1 class="headline">
@@ -49,9 +46,9 @@
 
       <Reveal delay={160}>
         <p class="lede">
-          The friendly, independent alternative to big-box digitization. Every tape,
-          reel, and photograph handled personally &mdash; no batch queues, no
-          conveyor belts.
+          Digitize your old analog media into crisp digital files you can
+          watch, share, and keep forever. Every item handled personally, no batch
+          queues, no conveyor belts.
         </p>
       </Reveal>
 
@@ -59,7 +56,7 @@
         <ul class="pitch">
           <li><span class="dot"></span> Unbeatable turnaround</li>
           <li><span class="dot"></span> Unbeatable service</li>
-          <li><span class="dot"></span> Unbeatable price</li>
+          <li><span class="dot"></span> Unlimited memories</li>
         </ul>
       </Reveal>
 
@@ -75,14 +72,31 @@
     </div>
 
     <Reveal delay={120} class="hero-media">
-      <div class="polaroid">
-        <div class="tape"></div>
-        <img
-          src="/memorysafe.gif"
-          alt="A slideshow of digitized home movies and family photographs"
-          class="hero-gif"
-        />
-        <p class="caption">Bring your memories to life</p>
+      <div class="polaroid-stack">
+        <div class="polaroid">
+          <div class="tape"></div>
+          <video
+            src="/memorysafe.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="hero-gif"
+          ></video>
+          <p class="caption">Relive every moment</p>
+        </div>
+        <div class="polaroid polaroid-2">
+          <div class="tape"></div>
+          <video
+            src="/Second_gif_compressed.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="hero-gif"
+          ></video>
+          <p class="caption">Preserved forever</p>
+        </div>
       </div>
     </Reveal>
   </div>
@@ -202,8 +216,19 @@
     justify-content: center;
   }
 
-  .polaroid {
+  .polaroid-stack {
     position: relative;
+    max-width: 900px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .polaroid {
+    position: absolute;
+    top:190px;
     background: #fff;
     padding: 16px 16px 56px;
     border-radius: 4px;
@@ -211,13 +236,21 @@
       0 1px 0 rgba(0, 0, 0, 0.05) inset,
       var(--shadow-lg);
     transform: rotate(1.8deg);
-    max-width: 460px;
-    width: 100%;
+    width: 480px;
     transition: transform var(--dur) var(--ease);
+  }
+
+  .polaroid-2 {
+    transform: rotate(-2.4deg) translateX(290px) translateY(-200px);
+    z-index: 1;
   }
 
   .polaroid:hover {
     transform: rotate(0deg) translateY(-4px);
+  }
+
+  .polaroid-2:hover {
+    transform: rotate(0deg) translateX(290px) translateY(-204px);
   }
 
   .tape {
@@ -244,13 +277,46 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 14px;
     text-align: center;
-    font-family: var(--font-display);
+    font-family: Handodle;
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: 2rem;
     color: var(--ink);
     margin: 0;
+  }
+
+  @media (max-width: 1667px) {
+    .polaroid-stack {
+      max-width: 850px;
+      height: 380px;
+    }
+    .polaroid {
+      width: 350px;
+      top: 140px;
+    }
+    .polaroid-2 {
+      transform: rotate(-2.4deg) translateX(180px) translateY(-120px);
+    }
+    .polaroid-2:hover {
+      transform: rotate(0deg) translateX(180px) translateY(-124px);
+    }
+  }
+
+  @media (max-width: 1320px) {
+    .polaroid-stack {
+      max-width: 700px;
+      height: 340px;
+    }
+    .polaroid {
+      width: 300px;
+      top: 120px;
+    }
+    .polaroid-2 {
+      transform: rotate(-2.4deg) translateX(150px) translateY(-100px);
+    }
+    .polaroid-2:hover {
+      transform: rotate(0deg) translateX(150px) translateY(-104px);
+    }
   }
 
   @media (max-width: 960px) {
@@ -261,13 +327,37 @@
     .hero-copy {
       max-width: none;
     }
+    .polaroid-stack {
+      max-width: 500px;
+      height: 280px;
+    }
     .polaroid {
-      max-width: 380px;
-      margin: 0 auto;
+      width: 220px;
+      top: 87px;
+    }
+    .polaroid-2 {
+      transform: rotate(-2.4deg) translateX(133px) translateY(-92px);
+    }
+    .polaroid-2:hover {
+      transform: rotate(0deg) translateX(133px) translateY(-96px);
+    }
+    .caption{
+      font-size:1rem
     }
   }
 
   @media (max-width: 560px) {
+    .polaroid-stack {
+      max-width: 300px;
+      height: 160px;
+    }
+    .polaroid {
+      width: 230px;
+      top: -10px;
+    }
+    .polaroid-2 {
+      display: none;
+    }
     .cta-row .btn {
       width: 100%;
       justify-content: center;

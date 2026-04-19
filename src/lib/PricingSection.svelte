@@ -2,7 +2,10 @@
   import Reveal from '$lib/Reveal.svelte';
 
   const rates = [
-    { label: 'VHS / Betamax', price: '$25', unit: 'per tape' },
+    { label: 'VHS', price: '$20', unit: 'per tape' },
+    { label: 'VHS-C', price: '$25', unit: 'per tape'},
+    { label: 'Compact disk', price: '$10', unit: 'per CD'}
+    /*
     { label: '8mm / Super 8 film', price: '$30', unit: 'per reel' },
     { label: 'Hi8 / Video8', price: '$22', unit: 'per tape' },
     { label: 'Mini DV', price: '$18', unit: 'per tape' },
@@ -10,6 +13,7 @@
     { label: '35mm slides', price: '$0.65', unit: 'per slide' },
     { label: 'Film negatives', price: '$0.50', unit: 'per frame' },
     { label: 'Audio cassettes', price: '$18', unit: 'per tape' },
+    */
   ];
 
   const bundles = [
@@ -25,13 +29,13 @@
   ];
 </script>
 
-<section id="pricing" class="section">
+<section id="pricing" class="section section--alt">
   <div class="wrapper">
     <Reveal>
       <p class="eyebrow">Pricing</p>
       <h2 class="section-title">Flat rates. No surprises.</h2>
       <p class="section-sub">
-        One price per item. Originals returned at no extra charge. Minimum order $35.
+        One price per item. Originals returned at no extra charge.
       </p>
     </Reveal>
 
@@ -53,7 +57,6 @@
               </li>
             {/each}
           </ul>
-          <p class="minor">Minimum order: <strong>$35</strong></p>
         </article>
       </Reveal>
 
@@ -83,13 +86,6 @@
                 </li>
               {/each}
             </ul>
-          </article>
-        </Reveal>
-
-        <Reveal delay={200}>
-          <article class="card cta-card">
-            <p>Unusual format or large archive?</p>
-            <a href="/contact" class="btn btn-primary">Get a custom quote →</a>
           </article>
         </Reveal>
       </div>

@@ -8,6 +8,11 @@
 @import '@fontsource/inter/700.css';
 @import './lib/styles/tokens.css';
 
+@font-face {
+  font-family: 'Handodle';
+  src: url('/fonts/Handodle.ttf') format('truetype');
+}
+
 *,
 *::before,
 *::after {

@@ -2,7 +2,7 @@
   import Reveal from '$lib/Reveal.svelte';
 </script>
 
-<section id="about" class="section section--alt">
+<section id="about" class="section">
   <div class="wrapper">
     <div class="layout">
       <Reveal>
@@ -13,14 +13,13 @@
           <p class="lede">
             MemorySafe started with a box of VHS tapes at my parents' house &mdash;
             birthdays, Christmases, vacations &mdash; all slowly deteriorating in a
-            closet. The big chains quoted hundreds of dollars and weeks of waiting.
-            That felt wrong.
+            closet. 
           </p>
           <p>
-            So I bought the equipment. Learned the process. Started with family,
-            then friends, then strangers who found me by word of mouth. Today,
-            MemorySafe has rescued thousands of hours of irreplaceable footage from
-            tapes, reels, and shoeboxes of prints.
+            So I bought the equipment and went to work. I soon realized that I was not the only
+            family with irreplaceable memories sitting on aging tapes. That is why I started
+            MemorySafe: to make sure others don't lose the precious memories they worked so
+            hard to capture.
           </p>
           <p>
             Every job is handled personally &mdash; no technicians on a conveyor
@@ -36,7 +35,7 @@
           <figure class="portrait-frame">
             <div class="tape-strip"></div>
             <img
-              src="https://placehold.co/520x640/1e1a15/e8c9a8?text=Founder"
+              src="founder.jpeg"
               alt="Founder of MemorySafe"
             />
             <figcaption>

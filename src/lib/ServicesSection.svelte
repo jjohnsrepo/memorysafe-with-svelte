@@ -3,13 +3,27 @@
 
   const services = [
     {
-      title: 'VHS & Betamax',
-      desc: 'Home recordings from the 70s through the 90s. Standard play, long play — we handle them all.',
-      img: 'https://placehold.co/640x420/1e1a15/e8c9a8?text=VHS+%26+Betamax',
-      alt: 'Stack of VHS and Betamax tapes',
+      title: 'VHS',
+      desc: 'Home recordings from the 70s through the 90s. Relive your most precious memories.',
+      img: 'https://www.hightechrecyclingmi.com/wp-content/uploads/sites/124/2023/02/AdobeStock_506350193-680x298.jpeg',
+      alt: 'Stack of VHS tapes',
       tag: 'Tapes',
     },
     {
+      title: 'VHS-C',
+      desc: 'Bring your camcorder footage back to life.',
+      tag: 'Tapes',
+      img: 'https://lirp.cdn-website.com/ec5bb42f/dms3rep/multi/opt/How-Big-Are-VHS-C-Tapes-1920w.jpg',
+      alt: 'VHS-C camcorder tapes',
+    },
+    {
+      title: 'CD/DVD',
+      desc: 'Convert your old CDs into a modern playable format you can take anywhere. DVD-R included.',
+      tag: 'CD',
+      img: 'https://recordhead.biz/wp-content/uploads/2021/04/dvd-2418366_640-300x2001-1.jpg',
+      alt: 'Stack of CDs and DVDs',
+    },
+    /* {
       title: '8mm & Super 8 Film',
       desc: 'Frame-by-frame transfer of classic reels from the 1950s–1980s. Color and black & white.',
       img: 'https://placehold.co/640x420/55493b/fbf6ec?text=8mm+%26+Super+8',
@@ -43,18 +57,18 @@
       img: 'https://placehold.co/640x420/e8c9a8/55493b?text=Negatives',
       alt: '35mm film negatives',
       tag: 'Film',
-    },
+    },*/
   ];
 </script>
 
 <section id="services" class="section section--alt">
   <div class="wrapper">
     <Reveal>
-      <p class="eyebrow">What we digitize</p>
-      <h2 class="section-title">Every format that mattered.</h2>
+      <p class="eyebrow">What I digitize</p>
+      <h2 class="section-title">A growing selection of formats.</h2>
       <p class="section-sub">
-        All the major analog formats, handled with care on professional-grade
-        equipment. If yours isn't listed, just ask — chances are we can help.
+        As a new studio, I continue to grow the number of legacy formats I support. New formats
+        are added as often as new hardware is acquired.
       </p>
     </Reveal>
 
@@ -77,7 +91,7 @@
 
     <Reveal delay={180}>
       <p class="foot">
-        Don't see your format? <a href="/contact">Ask us</a> — chances are we handle it.
+        Have some old tech you want to donate? Let me know <a href="#contact">here!</a>
       </p>
     </Reveal>
   </div>

@@ -27,18 +27,16 @@
         <article class="article">
           <h2>How it started</h2>
           <p class="drop">
-            <span class="dropcap">M</span>emorySafe began as a personal frustration.
-            I found a box of VHS tapes at my parents' house — birthday parties,
-            school plays, a road trip from 1987. The magnetic tape was already
-            showing signs of deterioration. The big chains quoted me hundreds of
-            dollars and weeks of turnaround, with no guarantee of quality.
+            <span class="dropcap">M</span>emorySafe began as a personal curiosity.
+            I found a box of my parents' old camcorder tapes and began watching them.
+            I noticed significant wear on some of them and realized they did not have much
+            longer before they were gone forever.
           </p>
           <p>
-            I bought the equipment myself. Spent a few months learning the process
-            properly — the chemistry of magnetic tape decay, the right capture
-            hardware, how to get clean audio from a cassette recorded on a $15 boom
-            box in 1994. Digitized my family's tapes, then my friends', then
-            strangers who found me by word of mouth.
+            So I started learning how to digitize them. It was a slow process at first, but I
+            picked it up fast. As I discovered more media formats buried at the bottom of the
+            closet, I did those too. I soon had hours of footage that would have been lost if
+            I had not rescued them.
           </p>
           <p>
             That was the beginning. MemorySafe is still a one-person operation,
@@ -61,24 +59,16 @@
           </p>
           <p>
             Transfers happen in real time: I'm present for every hour of footage.
-            Audio is checked for sync drift. Film reels are cleaned before
-            scanning. Photos are de-dusted. I care about output quality the same
-            way I'd care about my own family's memories — because that's what
+            I care about output quality the same way I'd care about my own family's
+            memories — because that's what
             these are.
           </p>
 
           <h2>The equipment</h2>
           <p>
-            Professional-grade hardware throughout. VHS and camcorder tapes go
-            through a time-base corrector before capture to eliminate dropouts
-            and sync issues. Film reels are scanned frame-by-frame at 2K+
-            resolution. Photos and slides are digitized on a dedicated flatbed
-            scanner with calibrated color profiles.
-          </p>
-          <p>
-            Files are delivered as high-quality MP4 (H.264), lossless TIFF, or
-            high-res JPEG depending on the format — always at the best quality
-            the source allows.
+            I use trusted hardware throughout the process. Every media player is checked for
+            dust before your tapes are inserted, all footage is stored on local hard drives to
+            ensure data integrity, and every tape is handled by hand to ensure quality care.
           </p>
         </article>
       </Reveal>
@@ -88,7 +78,7 @@
           <figure class="portrait">
             <div class="tape"></div>
             <img
-              src="https://placehold.co/520x640/1e1a15/e8c9a8?text=Founder"
+              src="about_photo.jpeg"
               alt="The founder of MemorySafe at work"
             />
           </figure>
@@ -98,7 +88,7 @@
             <dl>
               <div>
                 <dt>Location</dt>
-                <dd>[City, State] — local drop-off welcome</dd>
+                <dd>Buena Vista, VA — local drop-off welcome</dd>
               </div>
               <div>
                 <dt>Turnaround</dt>
@@ -106,11 +96,11 @@
               </div>
               <div>
                 <dt>Formats</dt>
-                <dd>VHS, Betamax, 8mm, Super 8, Hi8, Mini DV, photos, slides, negatives, cassettes</dd>
+                <dd>VHS, VHS-C, CD/DVD</dd>
               </div>
               <div>
                 <dt>Established</dt>
-                <dd>[Year]</dd>
+                <dd>2025</dd>
               </div>
             </dl>
             <a href="/contact" class="btn btn-primary">Get a quote →</a>

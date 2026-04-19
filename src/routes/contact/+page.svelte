@@ -12,13 +12,13 @@
     <p class="eyebrow">Contact</p>
     <h1 class="title">Let's talk about your memories.</h1>
     <p class="sub">
-      Tell us what you have — tapes, reels, photos, or a mix. We'll get back to
+      Tell me what you have. I'll get back to
       you within one business day with a quote and next steps.
     </p>
   </div>
 </section>
 
-<ContactSection heading="Send a message" sub="We read every note personally." />
+<ContactSection heading="Send a message" sub="I read every note personally." />
 
 <style>
   .hero {

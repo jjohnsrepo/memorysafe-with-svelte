@@ -2,7 +2,7 @@
   import Reveal from '$lib/Reveal.svelte';
 
   export let heading = 'Get in touch';
-  export let sub = 'We respond within one business day — usually much faster.';
+  export let sub = 'I respond within one business day — usually much faster.';
 
   let sending = false;
   let sent = false;
@@ -16,19 +16,20 @@
     error = null;
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://formspree.io/f/xeevkowy', {
         method: 'POST',
+        headers: { Accept: 'application/json' },
         body: new FormData(form),
       });
       const body = await res.json();
-      if (res.ok && body.success) {
+      if (res.ok) {
         sent = true;
         form.reset();
       } else {
-        error = body.error ?? 'Something went wrong. Please try again.';
+        error = body.errors?.[0]?.message ?? 'Something went wrong. Please try again.';
       }
     } catch {
-      error = 'Connection error. Please try again or email us directly.';
+      error = 'Connection error. Please try again or email me directly.';
     } finally {
       sending = false;
     }
@@ -61,7 +62,7 @@
                 </svg>
               </div>
               <h3>Message received.</h3>
-              <p>Thanks — we'll be in touch soon. Check your inbox for a confirmation.</p>
+              <p>Thanks — I'll be in touch soon.</p>
               <button class="btn btn-ghost" on:click={() => (sent = false)}>
                 Send another
               </button>
@@ -114,7 +115,7 @@
           <dl>
             <div>
               <dt><span class="i">✉</span> Email</dt>
-              <dd><a href="mailto:hello@memorysafe.com">hello@memorysafe.com</a></dd>
+              <dd><a href="mailto:submission@memorysafe.store">submission@memorysafe.store</a></dd>
             </div>
             <div>
               <dt><span class="i">⏱</span> Turnaround</dt>
@@ -122,11 +123,7 @@
             </div>
             <div>
               <dt><span class="i">📍</span> Location</dt>
-              <dd>[City, State]<br />Local drop-off welcome</dd>
-            </div>
-            <div>
-              <dt><span class="i">📦</span> Shipping</dt>
-              <dd>Nationwide. Return instructions sent after receipt.</dd>
+              <dd>Buena Vista, VA<br />Local drop-off welcome</dd>
             </div>
           </dl>
         </aside>
