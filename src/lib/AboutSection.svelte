@@ -39,7 +39,7 @@
               alt="Founder of MemorySafe"
             />
             <figcaption>
-              <span class="signature">— the founder</span>
+              <span class="signature">Justin Johnson - Founder of MemorySafe</span>
             </figcaption>
           </figure>
 

@@ -24,8 +24,9 @@
 
   const addons = [
     { name: 'USB drive delivery', price: '$12' },
+    { name: 'DVD delivery', price: '$3 per DVD'},
     { name: 'Rush (3 days)', price: '+50%' },
-    { name: '1-yr cloud backup', price: '$8' },
+    { name: 'Home media system (only available to local residents)', price: 'Variable' },
   ];
 </script>
 
