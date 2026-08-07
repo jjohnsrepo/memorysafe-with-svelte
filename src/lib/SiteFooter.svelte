@@ -1,7 +1,6 @@
 <footer class="site-footer">
   <div class="wrapper footer-inner">
     <div class="brand">
-      <img src="/drawing.svg" alt="" aria-hidden="true" />
       <div>
         <p class="wordmark">MemorySafe</p>
         <p class="tag">Digitization that cares.</p>

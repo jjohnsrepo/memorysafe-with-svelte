@@ -5,18 +5,18 @@
   const steps = [
     {
       num: '01',
-      title: 'Send me your media',
+      title: 'Ship your media',
       body: "Pack up your tapes or discs and send them over. I'll email a confirmation within 24 hours of receipt and keep you updated along the way.",
     },
     {
       num: '02',
-      title: 'I do the work',
-      body: 'Every item is inspected and processed individually on professional equipment — no batch jobs, no rushing. Your footage gets the careful attention it deserves.',
+      title: 'Careful conversion',
+      body: 'Every item is inspected and processed individually on professional equipment. Your footage gets the careful attention it deserves.',
     },
     {
       num: '03',
-      title: 'Download or delivery',
-      body: "You'll receive a secure download link within 5–10 business days. Prefer physical? Add a USB drive to your order. Originals are always returned.",
+      title: 'Get everything back',
+      body: "All of your original media is safely returned to you, accompanied by your high-quality digital files on a flash drive or customer-provided drive.",
     },
   ];
 
@@ -112,7 +112,7 @@
           <p class="eyebrow">How it works</p>
           <h2 class="section-title">Simple, personal, end&#8209;to&#8209;end.</h2>
           <p class="section-sub">
-            From your shelf to a crisp digital file — with one pair of hands on it the whole way.
+            From your shelf to a crisp digital file.
           </p>
         </div>
       </Reveal>
@@ -160,7 +160,7 @@
       </div>
 
       <div class="foot">
-        <p>Average turnaround: <strong>7 business days.</strong> Rush available.</p>
+        <p>Average turnaround: <strong>7 business days.</strong></p>
       </div>
     </div>
   </div>

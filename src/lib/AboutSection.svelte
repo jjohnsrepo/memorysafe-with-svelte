@@ -49,7 +49,7 @@
               <span class="lbl">day avg. turnaround</span>
             </div>
             <div>
-              <span class="num">1,000+</span>
+              <span class="num">50+</span>
               <span class="lbl">hours digitized</span>
             </div>
             <div>

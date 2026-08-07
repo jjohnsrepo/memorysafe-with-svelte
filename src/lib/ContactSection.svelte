@@ -115,11 +115,11 @@
           <dl>
             <div>
               <dt><span class="i">✉</span> Email</dt>
-              <dd><a href="mailto:submission@memorysafe.store">submission@memorysafe.store</a></dd>
+              <dd><a href="mailto:johnsonjustin983@gmail.com">johnsonjustin983@gmail.com</a></dd>
             </div>
             <div>
               <dt><span class="i">⏱</span> Turnaround</dt>
-              <dd>5–10 business days<br />Rush available</dd>
+              <dd>5-10 business days<br /></dd>
             </div>
             <div>
               <dt><span class="i">📍</span> Location</dt>

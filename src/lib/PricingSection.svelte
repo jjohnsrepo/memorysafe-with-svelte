@@ -5,7 +5,8 @@
     { label: 'VHS', price: '$20', unit: 'per tape' },
     { label: 'VHS-C', price: '$25', unit: 'per tape'},
     { label: 'Compact disk', price: '$10', unit: 'per CD'}
-    /*
+
+    /*Uncomment these as you support more mediums
     { label: '8mm / Super 8 film', price: '$30', unit: 'per reel' },
     { label: 'Hi8 / Video8', price: '$22', unit: 'per tape' },
     { label: 'Mini DV', price: '$18', unit: 'per tape' },
@@ -17,15 +18,14 @@
   ];
 
   const bundles = [
-    { qty: '5–9 items', off: '10% off' },
-    { qty: '10–19 items', off: '20% off' },
+    { qty: '5-9 items', off: '10% off' },
+    { qty: '10-19 items', off: '20% off' },
     { qty: '20+ items', off: 'Custom quote' },
   ];
 
   const addons = [
     { name: 'USB drive delivery', price: '$12' },
     { name: 'DVD delivery', price: '$3 per DVD'},
-    { name: 'Rush (3 days)', price: '+50%' },
     { name: 'Home media system (only available to local residents)', price: 'Variable' },
   ];
 </script>

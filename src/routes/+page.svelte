@@ -54,8 +54,8 @@
 
       <Reveal delay={220}>
         <ul class="pitch">
-          <li><span class="dot"></span> Unbeatable turnaround</li>
-          <li><span class="dot"></span> Unbeatable service</li>
+          <li><span class="dot"></span> Unbeatable care</li>
+          <li><span class="dot"></span> Unbeatable price</li>
           <li><span class="dot"></span> Unlimited memories</li>
         </ul>
       </Reveal>
