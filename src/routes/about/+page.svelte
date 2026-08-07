@@ -92,7 +92,7 @@
               </div>
               <div>
                 <dt>Turnaround</dt>
-                <dd>5–10 business days</dd>
+                <dd>5-10 business days</dd>
               </div>
               <div>
                 <dt>Formats</dt>

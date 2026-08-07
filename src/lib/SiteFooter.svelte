@@ -3,7 +3,7 @@
     <div class="brand">
       <div>
         <p class="wordmark">MemorySafe</p>
-        <p class="tag">Digitization that cares.</p>
+        <p class="tag">Digitization That Cares.</p>
       </div>
     </div>
 

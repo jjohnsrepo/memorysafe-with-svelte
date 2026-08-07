@@ -4,7 +4,7 @@
   const rates = [
     { label: 'VHS', price: '$20', unit: 'per tape' },
     { label: 'VHS-C', price: '$25', unit: 'per tape'},
-    { label: 'Compact disk', price: '$10', unit: 'per CD'}
+    { label: 'CD/DVD', price: '$10', unit: 'per CD'}
 
     /*Uncomment these as you support more mediums
     { label: '8mm / Super 8 film', price: '$30', unit: 'per reel' },
