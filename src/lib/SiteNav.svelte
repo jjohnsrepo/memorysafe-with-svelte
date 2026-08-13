@@ -31,7 +31,7 @@
 <nav class:scrolled aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="brand" on:click={closeMenu} aria-label="MemorySafe — home">
-      <img src="/drawing.svg" alt="" class="logo" aria-hidden="true" />
+      <img src="/logo.svg" class="logo" aria-hidden="true" />
       <span class="wordmark">MemorySafe</span>
     </a>
 

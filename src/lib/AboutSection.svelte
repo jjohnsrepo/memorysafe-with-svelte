@@ -24,9 +24,16 @@
           <p>
             Every job is handled personally &mdash; no technicians on a conveyor
             belt, no outsourcing. Your memories are kept by someone who genuinely
-            cares about getting them right.
+            cares about getting them right.<sup class="fn-mark">*</sup>
           </p>
           <a href="/about" class="btn btn-ghost">Read the full story →</a>
+
+          <p class="footnote">
+            <sup class="fn-mark">*</sup>While every effort is made to ensure no
+            media is damaged or lost, accidents happen &mdash; a risk inherent to
+            working with old media. In the event of an accident, I&rsquo;ll
+            communicate with you and we can discuss an appropriate response.
+          </p>
         </div>
       </Reveal>
 
@@ -85,12 +92,33 @@
     font-size: 1.02rem;
     line-height: 1.75;
     color: var(--ink-soft);
-    margin: 0 0 1.1rem 0;
     max-width: 58ch;
   }
 
   .text .btn {
     margin-top: 1rem;
+  }
+
+  .fn-mark {
+    font-size: 0.6em;
+    vertical-align: super;
+    color: var(--accent);
+    line-height: 0
+  }
+
+  .text .footnote {
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: var(--ink-mute);
+    font-weight: 400;
+    margin: 1.75rem 0 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    max-width: 58ch;
+  }
+
+  .footnote .fn-mark {
+    margin-right: 0.2em;
   }
 
   .media {

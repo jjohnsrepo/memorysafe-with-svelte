@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <!-- Shadow subtly tinted with your ink color for better blending on warm backgrounds -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1e1a15" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Lock Arch (Shackle) -->
+  <path d="M 65 85 V 55 A 35 35 0 0 1 135 55 V 85" fill="none" stroke="#b85538" stroke-width="16" stroke-linecap="round" />
+
+  <g filter="url(#shadow)">
+    <!-- VHS Main Body -->
+    <rect x="30" y="80" width="140" height="90" rx="8" fill="#1e1a15" />
+
+    <!-- VHS Bottom Details (Tape Guard) -->
+    <rect x="40" y="155" width="120" height="15" rx="4" fill="#55493b" />
+    <rect x="45" y="155" width="110" height="2" fill="#1e1a15" opacity="0.5" />
+
+    <!-- Sticker Label -->
+    <rect x="45" y="90" width="110" height="55" rx="4" fill="#fbf6ec" />
+    
+    <!-- Stripe on label -->
+    <rect x="45" y="90" width="110" height="12" rx="4" fill="#9d4530" />
+    <rect x="45" y="98" width="110" height="4" fill="#9d4530" />
+
+    <!-- Transparent Tape Window -->
+    <rect x="55" y="110" width="90" height="25" rx="12.5" fill="#55493b" />
+
+    <!-- Left Tape Spool -->
+    <circle cx="75" cy="122.5" r="9" fill="#f3eadb" />
+    <circle cx="75" cy="122.5" r="3" fill="#1e1a15" />
+
+    <!-- Right Tape Spool -->
+    <circle cx="125" cy="122.5" r="9" fill="#f3eadb" />
+    <circle cx="125" cy="122.5" r="3" fill="#1e1a15" />
+
+    <!-- Tape Path bridging the spools -->
+    <line x1="68" y1="130" x2="132" y2="130" stroke="#f3eadb" stroke-width="1.5" />
+  </g>
+</svg>

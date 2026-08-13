@@ -54,14 +54,22 @@
             Every job is processed by hand. No batch queues, no outsourcing. When
             your tapes arrive, I inspect each one before transfer — checking for
             mold, splices, and playback issues that could damage the tape or the
-            equipment. If something needs attention, I'll let you know before I
+            equipment.<sup class="fn-mark">*</sup> If something needs attention, I'll let you know before I
             proceed.
           </p>
+
           <p>
             Transfers happen in real time: I'm present for every hour of footage.
             I care about output quality the same way I'd care about my own family's
             memories — because that's what
             these are.
+          </p>
+
+          <p class="footnote">
+            <sup class="fn-mark">*</sup>While every effort is made to ensure no
+            media is damaged or lost, accidents happen &mdash; a risk inherent to
+            working with old media. In the event of an accident, I&rsquo;ll
+            communicate with you and we can discuss an appropriate response.
           </p>
 
           <h2>The equipment</h2>
@@ -158,6 +166,27 @@
     color: var(--ink-soft);
     margin: 0 0 1.15rem 0;
     max-width: 66ch;
+  }
+
+  .fn-mark {
+    font-size: 0.6em;
+    vertical-align: super;
+    color: var(--accent);
+    line-height: 0;
+  }
+
+  .article .footnote {
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: var(--ink-mute);
+    margin: 1.75rem 0 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    max-width: 66ch;
+  }
+
+  .footnote .fn-mark {
+    margin-right: 0.25em;
   }
 
   .dropcap {
