@@ -13,6 +13,7 @@
       <a href="/#services">Services</a>
       <a href="/#pricing">Pricing</a>
       <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
     </nav>
 
     <p class="copy">&copy; {new Date().getFullYear()} MemorySafe. All rights reserved.</p>
@@ -47,7 +48,7 @@
   }
 
   .wordmark {
-    font-family: Courier, "Courier New", var(--font-mono);
+    font-family: Courier, 'Courier New', var(--font-mono);
     font-size: 1.3rem;
     font-weight: 700;
     margin: 0;
