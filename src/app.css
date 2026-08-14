@@ -74,7 +74,7 @@ a {
   transition: color var(--dur-fast) var(--ease);
 }
 
-a:hover {
+a:not(.btn):hover {
   color: var(--accent-hover);
   text-decoration: underline;
   text-underline-offset: 3px;

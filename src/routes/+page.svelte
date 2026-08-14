@@ -101,11 +101,10 @@
     </Reveal>
   </div>
 </section>
-
+<AboutSection />
 <ServicesSection />
 <HowItWorks />
 <PricingSection />
-<AboutSection />
 <ContactSection />
 
 <style>
