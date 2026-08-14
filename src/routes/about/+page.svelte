@@ -1,10 +1,23 @@
 <script>
   import Reveal from '$lib/Reveal.svelte';
+  import { SITE_URL } from '$lib/site.js';
 </script>
 
 <svelte:head>
   <title>About — MemorySafe</title>
   <meta name="description" content="The story behind MemorySafe and the person who runs it." />
+  <link rel="canonical" href="{SITE_URL}/about" />
+  <meta property="og:title" content="About — MemorySafe" />
+  <meta
+    property="og:description"
+    content="The story behind MemorySafe and the person who runs it."
+  />
+  <meta property="og:url" content="{SITE_URL}/about" />
+  <meta name="twitter:title" content="About — MemorySafe" />
+  <meta
+    name="twitter:description"
+    content="The story behind MemorySafe and the person who runs it."
+  />
 </svelte:head>
 
 <section class="hero section">
@@ -13,8 +26,8 @@
       <p class="eyebrow">About</p>
       <h1 class="title">The person behind your tapes.</h1>
       <p class="sub">
-        A little history on MemorySafe — how it started, how every job gets done,
-        and the gear that makes it possible.
+        A little history on MemorySafe — how it started, how every job gets done, and the gear that
+        makes it possible.
       </p>
     </Reveal>
   </div>
@@ -27,56 +40,52 @@
         <article class="article">
           <h2>How it started</h2>
           <p class="drop">
-            <span class="dropcap">M</span>emorySafe began as a personal curiosity.
-            I found a box of my parents' old camcorder tapes and began watching them.
-            I noticed significant wear on some of them and realized they did not have much
-            longer before they were gone forever.
+            <span class="dropcap">M</span>emorySafe began as a personal curiosity. I found a box of
+            my parents' old camcorder tapes and began watching them. I noticed significant wear on
+            some of them and realized they did not have much longer before they were gone forever.
           </p>
           <p>
-            So I started learning how to digitize them. It was a slow process at first, but I
-            picked it up fast. As I discovered more media formats buried at the bottom of the
-            closet, I did those too. I soon had hours of footage that would have been lost if
-            I had not rescued them.
+            So I started learning how to digitize them. It was a slow process at first, but I picked
+            it up fast. As I discovered more media formats buried at the bottom of the closet, I did
+            those too. I soon had hours of footage that would have been lost if I had not rescued
+            them.
           </p>
           <p>
-            That was the beginning. MemorySafe is still a one-person operation,
-            and I intend to keep it that way. Every item that comes through my
-            door is handled by me, personally.
+            That was the beginning. MemorySafe is still a one-person operation, and I intend to keep
+            it that way. Every item that comes through my door is handled by me, personally.
           </p>
 
           <blockquote class="pull">
-            "Your memories are in the hands of someone who genuinely cares —
-            not a technician on a conveyor belt."
+            "Your memories are in the hands of someone who genuinely cares — not a technician on a
+            conveyor belt."
           </blockquote>
 
           <h2>How I work</h2>
           <p>
-            Every job is processed by hand. No batch queues, no outsourcing. When
-            your tapes arrive, I inspect each one before transfer — checking for
-            mold, splices, and playback issues that could damage the tape or the
-            equipment.<sup class="fn-mark">*</sup> If something needs attention, I'll let you know before I
-            proceed.
+            Every job is processed by hand. No batch queues, no outsourcing. When your tapes arrive,
+            I inspect each one before transfer — checking for mold, splices, and playback issues
+            that could damage the tape or the equipment.<sup class="fn-mark">*</sup> If something needs
+            attention, I'll let you know before I proceed.
           </p>
 
           <p>
-            Transfers happen in real time: I'm present for every hour of footage.
-            I care about output quality the same way I'd care about my own family's
-            memories — because that's what
-            these are.
+            Transfers happen in real time: I'm present for every hour of footage. I care about
+            output quality the same way I'd care about my own family's memories — because that's
+            what these are.
           </p>
 
           <p class="footnote">
-            <sup class="fn-mark">*</sup>While every effort is made to ensure no
-            media is damaged or lost, accidents happen &mdash; a risk inherent to
-            working with old media. In the event of an accident, I&rsquo;ll
-            communicate with you and we can discuss an appropriate response.
+            <sup class="fn-mark">*</sup>While every effort is made to ensure no media is damaged or
+            lost, accidents happen &mdash; a risk inherent to working with old media. In the event
+            of an accident, I&rsquo;ll communicate with you and we can discuss an appropriate
+            response.
           </p>
 
           <h2>The equipment</h2>
           <p>
-            I use trusted hardware throughout the process. Every media player is checked for
-            dust before your tapes are inserted, all footage is stored on local hard drives to
-            ensure data integrity, and every tape is handled by hand to ensure quality care.
+            I use trusted hardware throughout the process. Every media player is checked for dust
+            before your tapes are inserted, all footage is stored on local hard drives to ensure
+            data integrity, and every tape is handled by hand to ensure quality care.
           </p>
         </article>
       </Reveal>
@@ -84,11 +93,8 @@
       <Reveal delay={140}>
         <aside class="side">
           <figure class="portrait">
-            <div class="tape"></div>
-            <img
-              src="about_photo.jpeg"
-              alt="The founder of MemorySafe at work"
-            />
+            <div class="tape" />
+            <img src="about_photo.jpeg" alt="The founder of MemorySafe at work" />
           </figure>
 
           <div class="facts card">
@@ -123,8 +129,7 @@
   .hero {
     padding-top: clamp(4rem, 10vw, 7rem);
     padding-bottom: clamp(3rem, 7vw, 5rem);
-    background:
-      radial-gradient(circle at 80% 20%, var(--accent-soft) 0%, transparent 50%),
+    background: radial-gradient(circle at 80% 20%, var(--accent-soft) 0%, transparent 50%),
       var(--bg);
   }
 

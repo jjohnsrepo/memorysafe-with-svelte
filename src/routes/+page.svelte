@@ -5,6 +5,7 @@
   import AboutSection from '$lib/AboutSection.svelte';
   import ContactSection from '$lib/ContactSection.svelte';
   import Reveal from '$lib/Reveal.svelte';
+  import { SITE_URL, SITE_DESCRIPTION } from '$lib/site.js';
 </script>
 
 <svelte:head>
@@ -13,25 +14,40 @@
     name="description"
     content="The friendly, independent alternative to big box digitization. Unbeatable turnaround, service, and price."
   />
+  <link rel="canonical" href="{SITE_URL}/" />
+  <meta property="og:title" content="MemorySafe — Digitization That Cares" />
+  <meta property="og:description" content={SITE_DESCRIPTION} />
+  <meta property="og:url" content="{SITE_URL}/" />
+  <meta name="twitter:title" content="MemorySafe — Digitization That Cares" />
+  <meta name="twitter:description" content={SITE_DESCRIPTION} />
+  <script type="application/ld+json">
+    {
+      JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: SITE_NAME,
+        description: SITE_DESCRIPTION,
+        url: `${SITE_URL}/`,
+        email: 'johnsonjustin983@gmail.com',
+        founder: { '@type': 'Person', name: 'Justin Johnson' },
+        areaServed: 'Buena Vista, VA',
+        priceRange: '$'
+      });
+    }
+  </script>
 </svelte:head>
 
 <section class="hero">
-  <div class="hero-bg grain"></div>
+  <div class="hero-bg grain" />
 
   <div class="wrapper hero-inner">
     <div class="hero-copy">
-
       <Reveal delay={80}>
         <h1 class="headline">
           Your memories,
           <span class="accent-wrap">
             <span class="accent">carefully</span>
-            <svg
-              class="underline-swash"
-              viewBox="0 0 220 14"
-              fill="none"
-              aria-hidden="true"
-            >
+            <svg class="underline-swash" viewBox="0 0 220 14" fill="none" aria-hidden="true">
               <path
                 d="M2 9 C 60 2, 160 2, 218 9"
                 stroke="currentColor"
@@ -46,17 +62,16 @@
 
       <Reveal delay={160}>
         <p class="lede">
-          Digitize your old analog media into crisp digital files you can
-          watch, share, and keep forever. Every item handled personally, no batch
-          queues, no conveyor belts.
+          Digitize your old analog media into crisp digital files you can watch, share, and keep
+          forever. Every item handled personally, no batch queues, no conveyor belts.
         </p>
       </Reveal>
 
       <Reveal delay={220}>
         <ul class="pitch">
-          <li><span class="dot"></span> Unbeatable care</li>
-          <li><span class="dot"></span> Unbeatable price</li>
-          <li><span class="dot"></span> Unlimited memories</li>
+          <li><span class="dot" /> Unbeatable care</li>
+          <li><span class="dot" /> Unbeatable price</li>
+          <li><span class="dot" /> Unlimited memories</li>
         </ul>
       </Reveal>
 
@@ -74,19 +89,12 @@
     <Reveal delay={120} class="hero-media">
       <div class="polaroid-stack">
         <div class="polaroid">
-          <div class="tape"></div>
-          <video
-            src="/memorysafe.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-            class="hero-gif"
-          ></video>
+          <div class="tape" />
+          <video src="/memorysafe.mp4" autoplay loop muted playsinline class="hero-gif" />
           <p class="caption">Relive every moment</p>
         </div>
         <div class="polaroid polaroid-2">
-          <div class="tape"></div>
+          <div class="tape" />
           <video
             src="/Second_gif_compressed.mp4"
             autoplay
@@ -94,7 +102,7 @@
             muted
             playsinline
             class="hero-gif"
-          ></video>
+          />
           <p class="caption">Preserved forever</p>
         </div>
       </div>
@@ -112,10 +120,8 @@
     position: relative;
     overflow: hidden;
     padding: clamp(4rem, 9vw, 7rem) 0 clamp(4rem, 8vw, 6rem);
-    background:
-      radial-gradient(circle at 85% 10%, var(--accent-soft) 0%, transparent 45%),
-      radial-gradient(circle at 5% 95%, #efe0c5 0%, transparent 50%),
-      var(--bg);
+    background: radial-gradient(circle at 85% 10%, var(--accent-soft) 0%, transparent 45%),
+      radial-gradient(circle at 5% 95%, #efe0c5 0%, transparent 50%), var(--bg);
   }
 
   .hero-bg {
@@ -227,13 +233,11 @@
 
   .polaroid {
     position: absolute;
-    top:190px;
+    top: 190px;
     background: #fff;
     padding: 16px 16px 56px;
     border-radius: 4px;
-    box-shadow:
-      0 1px 0 rgba(0, 0, 0, 0.05) inset,
-      var(--shadow-lg);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) inset, var(--shadow-lg);
     transform: rotate(1.8deg);
     width: 480px;
     transition: transform var(--dur) var(--ease);
@@ -340,8 +344,8 @@
     .polaroid-2:hover {
       transform: rotate(0deg) translateX(133px) translateY(-96px);
     }
-    .caption{
-      font-size:1rem
+    .caption {
+      font-size: 1rem;
     }
   }
 

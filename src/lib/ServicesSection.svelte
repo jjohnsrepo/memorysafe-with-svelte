@@ -5,24 +5,24 @@
     {
       title: 'VHS',
       desc: 'Home recordings from the 70s through the 90s. Relive your most precious memories.',
-      img: 'https://www.hightechrecyclingmi.com/wp-content/uploads/sites/124/2023/02/AdobeStock_506350193-680x298.jpeg',
+      img: '/services/vhs.jpg',
       alt: 'Stack of VHS tapes',
-      tag: 'Tapes',
+      tag: 'Tapes'
     },
     {
       title: 'VHS-C',
       desc: 'Bring your camcorder footage back to life.',
       tag: 'Tapes',
-      img: 'https://lirp.cdn-website.com/ec5bb42f/dms3rep/multi/opt/How-Big-Are-VHS-C-Tapes-1920w.jpg',
-      alt: 'VHS-C camcorder tapes',
+      img: '/services/vhsc.jpg',
+      alt: 'VHS-C camcorder tapes'
     },
     {
       title: 'CD/DVD',
       desc: 'Convert your old CDs into a modern playable format you can take anywhere. DVD-R included.',
       tag: 'CD',
-      img: 'https://recordhead.biz/wp-content/uploads/2021/04/dvd-2418366_640-300x2001-1.jpg',
-      alt: 'Stack of CDs and DVDs',
-    },
+      img: '/services/cd-dvd.jpg',
+      alt: 'Stack of CDs and DVDs'
+    }
     /* {
       title: '8mm & Super 8 Film',
       desc: 'Frame-by-frame transfer of classic reels from the 1950s–1980s. Color and black & white.',
@@ -67,8 +67,8 @@
       <p class="eyebrow">What I digitize</p>
       <h2 class="section-title">A growing selection of formats.</h2>
       <p class="section-sub">
-        As a new studio, I continue to grow the number of legacy formats I support. New formats
-        are added as often as new hardware is acquired.
+        As a new studio, I continue to grow the number of legacy formats I support. New formats are
+        added as often as new hardware is acquired.
       </p>
     </Reveal>
 

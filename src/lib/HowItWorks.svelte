@@ -6,18 +6,18 @@
     {
       num: '01',
       title: 'Ship your media',
-      body: "Pack up your tapes or discs and send them over. I'll email a confirmation within 24 hours of receipt and keep you updated along the way.",
+      body: "Pack up your tapes or discs and send them over. I'll email a confirmation within 24 hours of receipt and keep you updated along the way."
     },
     {
       num: '02',
       title: 'Careful conversion',
-      body: 'Every item is inspected and processed individually on professional equipment. Your footage gets the careful attention it deserves.',
+      body: 'Every item is inspected and processed individually on professional equipment. Your footage gets the careful attention it deserves.'
     },
     {
       num: '03',
       title: 'Get everything back',
-      body: "All of your original media is safely returned to you, accompanied by your high-quality digital files on a flash drive or customer-provided drive.",
-    },
+      body: 'All of your original media is safely returned to you, accompanied by your high-quality digital files on a flash drive or customer-provided drive.'
+    }
   ];
 
   /** @type {HTMLElement} */
@@ -111,29 +111,19 @@
         <div class="intro">
           <p class="eyebrow">How it works</p>
           <h2 class="section-title">Simple, personal, end&#8209;to&#8209;end.</h2>
-          <p class="section-sub">
-            From your shelf to a crisp digital file.
-          </p>
+          <p class="section-sub">From your shelf to a crisp digital file.</p>
         </div>
       </Reveal>
 
       <div class="steps" bind:this={stepsEl}>
-        <div
-          class="rail"
-          aria-hidden="true"
-          style="top: {railTop}px; bottom: {railBottom}px;"
-        >
-          <span class="rail-track"></span>
-          <span class="rail-fill" style="height: {eased * 100}%"></span>
+        <div class="rail" aria-hidden="true" style="top: {railTop}px; bottom: {railBottom}px;">
+          <span class="rail-track" />
+          <span class="rail-fill" style="height: {eased * 100}%" />
         </div>
 
         <ol class="step-list">
           {#each steps as step, i}
-            <li
-              class="step"
-              class:active={i === activeIndex}
-              class:done={i < activeIndex}
-            >
+            <li class="step" class:active={i === activeIndex} class:done={i < activeIndex}>
               <div class="node" bind:this={nodeEls[i]}>
                 {#if i < activeIndex}
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
@@ -162,10 +152,9 @@
       <div class="foot">
         <p>Average turnaround: <strong>7 business days.</strong></p>
         <p class="footnote">
-          <sup class="fn-mark">*</sup>While every effort is made to ensure no
-          media is damaged or lost, accidents happen &mdash; a risk inherent to
-          working with old media. In the event of an accident, I&rsquo;ll
-          communicate with you and we can discuss an appropriate response.
+          <sup class="fn-mark">*</sup>While every effort is made to ensure no media is damaged or
+          lost, accidents happen &mdash; a risk inherent to working with old media. In the event of
+          an accident, I&rsquo;ll communicate with you and we can discuss an appropriate response.
         </p>
       </div>
     </div>
@@ -268,18 +257,15 @@
     font-weight: 600;
     font-size: 0.95rem;
     color: var(--ink-soft);
-    transition:
-      background var(--dur) var(--ease),
-      border-color var(--dur) var(--ease),
-      color var(--dur) var(--ease),
-      box-shadow var(--dur) var(--ease);
+    transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease),
+      color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
   }
 
   .fn-mark {
     font-size: 0.6em;
     vertical-align: super;
     color: var(--accent);
-    line-height: 0
+    line-height: 0;
   }
 
   .foot {
@@ -350,6 +336,23 @@
     .content p {
       font-size: 0.95rem;
     }
+  }
+
+  /* Without JS the sticky-scroll section falls back to a static layout */
+  :global(html:not(.js)) .scroll-container {
+    height: auto;
+    padding: var(--section-pad-y) 0;
+  }
+
+  :global(html:not(.js)) .pinned {
+    position: static;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  :global(html:not(.js)) .rail-fill {
+    height: 100% !important;
   }
 
   @media (max-width: 720px), (prefers-reduced-motion: reduce) {
