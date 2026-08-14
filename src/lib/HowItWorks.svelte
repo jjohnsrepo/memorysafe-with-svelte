@@ -161,6 +161,12 @@
 
       <div class="foot">
         <p>Average turnaround: <strong>7 business days.</strong></p>
+        <p class="footnote">
+          <sup class="fn-mark">*</sup>While every effort is made to ensure no
+          media is damaged or lost, accidents happen &mdash; a risk inherent to
+          working with old media. In the event of an accident, I&rsquo;ll
+          communicate with you and we can discuss an appropriate response.
+        </p>
       </div>
     </div>
   </div>
@@ -269,6 +275,39 @@
       box-shadow var(--dur) var(--ease);
   }
 
+  .fn-mark {
+    font-size: 0.6em;
+    vertical-align: super;
+    color: var(--accent);
+    line-height: 0
+  }
+
+  .foot {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    display: grid;
+    gap: 0.75rem;
+    max-width: 58ch;
+  }
+
+  .foot > p {
+    margin: 0;
+  }
+
+  .footnote {
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: var(--ink-mute);
+    font-weight: 400;
+    margin: 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .footnote .fn-mark {
+    margin-right: 0.2em;
+  }
+
   .step.active .node {
     background: var(--accent);
     border-color: var(--accent);
@@ -296,11 +335,6 @@
     line-height: 1.65;
     font-size: 1rem;
     max-width: 58ch;
-  }
-
-  .foot {
-    color: var(--ink-soft);
-    font-size: 0.95rem;
   }
 
   @media (max-height: 780px) {

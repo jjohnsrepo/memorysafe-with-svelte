@@ -8,32 +8,24 @@
       <Reveal>
         <div class="text">
           <p class="eyebrow">About MemorySafe</p>
-          <h2 class="section-title">A one-person studio, on purpose.</h2>
+          <h2 class="section-title">What is MemorySafe?</h2>
 
           <p class="lede">
-            MemorySafe started with a box of VHS tapes at my parents' house &mdash;
-            birthdays, Christmases, vacations &mdash; all slowly deteriorating in a
-            closet. 
+          Don't let you old home videos and and precious memories rot away in a garage or dusty closet.
           </p>
           <p>
-            So I bought the equipment and went to work. I soon realized that I was not the only
-            family with irreplaceable memories sitting on aging tapes. That is why I started
-            MemorySafe: to make sure others don't lose the precious memories they worked so
-            hard to capture.
+            MemorySafe is a small one man operation dedicated to converting your old analog/digital memories to modern 
+            watchable formats. Your old media isn't going to be around forever - make the decision that allows everyone to enjoy your memories.
+            Relive your most precious memories and ensure that they stay protected for future generations
+            to come.
           </p>
           <p>
-            Every job is handled personally &mdash; no technicians on a conveyor
-            belt, no outsourcing. Your memories are kept by someone who genuinely
-            cares about getting them right.<sup class="fn-mark">*</sup>
-          </p>
-          <a href="/about" class="btn btn-ghost">Read the full story →</a>
 
-          <p class="footnote">
-            <sup class="fn-mark">*</sup>While every effort is made to ensure no
-            media is damaged or lost, accidents happen &mdash; a risk inherent to
-            working with old media. In the event of an accident, I&rsquo;ll
-            communicate with you and we can discuss an appropriate response.
           </p>
+         
+          <a href="/about" class="btn btn-ghost">Read the origin story →</a>
+
+          
         </div>
       </Reveal>
 
@@ -99,27 +91,7 @@
     margin-top: 1rem;
   }
 
-  .fn-mark {
-    font-size: 0.6em;
-    vertical-align: super;
-    color: var(--accent);
-    line-height: 0
-  }
 
-  .text .footnote {
-    font-size: 0.72rem;
-    line-height: 1.55;
-    color: var(--ink-mute);
-    font-weight: 400;
-    margin: 1.75rem 0 0 0;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-    max-width: 58ch;
-  }
-
-  .footnote .fn-mark {
-    margin-right: 0.2em;
-  }
 
   .media {
     position: relative;

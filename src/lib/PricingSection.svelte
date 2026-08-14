@@ -2,8 +2,8 @@
   import Reveal from '$lib/Reveal.svelte';
 
   const rates = [
-    { label: 'VHS', price: '$20', unit: 'per tape' },
-    { label: 'VHS-C', price: '$25', unit: 'per tape'},
+    { label: 'VHS', price: '$15', unit: 'per tape' },
+    { label: 'VHS-C', price: '$20', unit: 'per tape'},
     { label: 'CD/DVD', price: '$10', unit: 'per CD'}
 
     /*Uncomment these as you support more mediums
@@ -26,7 +26,7 @@
   const addons = [
     { name: 'USB drive delivery', price: '$12' },
     { name: 'DVD delivery', price: '$3 per DVD'},
-    { name: 'Home media system (only available to local residents)', price: 'Variable' },
+    { name: 'Home media system', help: 'what is this?', helpUrl: '/about', price: 'Variable' },
   ];
 </script>
 
@@ -45,7 +45,6 @@
         <article class="card rates-card">
           <header class="rates-head">
             <h3>Per-item rates</h3>
-            <span class="badge">Most popular</span>
           </header>
           <ul class="rates">
             {#each rates as r}
@@ -82,7 +81,12 @@
             <ul class="bundle-list">
               {#each addons as a}
                 <li>
-                  <span>{a.name}</span>
+                  <span>
+                    {a.name}
+                    {#if a.helpUrl}
+                      <a href={a.helpUrl} class="help-link" aria-label="What is this?"> ({a.help})</a>
+                    {/if}
+                  </span>
                   <strong>{a.price}</strong>
                 </li>
               {/each}
@@ -219,6 +223,13 @@
     color: var(--ink);
     font-family: var(--font-display);
     font-weight: 500;
+  }
+
+  .help-link {
+    margin-left: 0.35rem;
+    font-size: 0.92rem;
+    color: var(--ink-mute);
+    text-decoration: underline;
   }
 
   .cta-card {

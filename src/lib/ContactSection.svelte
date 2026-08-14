@@ -36,7 +36,7 @@
   }
 </script>
 
-<section id="contact" class="section section--alt">
+<section id="contact" class="section">
   <div class="wrapper">
     <Reveal>
       <p class="eyebrow">Contact</p>
