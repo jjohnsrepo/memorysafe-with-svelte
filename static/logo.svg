@@ -1,15 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
-  <defs>
-    <!-- Shadow subtly tinted with your ink color for better blending on warm backgrounds -->
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1e1a15" flood-opacity="0.25" />
-    </filter>
-  </defs>
-
   <!-- Lock Arch (Shackle) -->
   <path d="M 65 85 V 55 A 35 35 0 0 1 135 55 V 85" fill="none" stroke="#b85538" stroke-width="16" stroke-linecap="round" />
 
-  <g filter="url(#shadow)">
+  <g>
+    <!-- Soft ground shadow (no SVG filter, keeps small renders crisp) -->
+    <ellipse cx="100" cy="180" rx="72" ry="9" fill="#1e1a15" opacity="0.14" />
+
     <!-- VHS Main Body -->
     <rect x="30" y="80" width="140" height="90" rx="8" fill="#1e1a15" />
 

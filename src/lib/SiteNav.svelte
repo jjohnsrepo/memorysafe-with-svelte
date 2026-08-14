@@ -111,9 +111,9 @@
   }
 
   nav.scrolled {
-    background: rgba(251, 246, 236, 0.82);
-    backdrop-filter: saturate(1.1) blur(10px);
-    -webkit-backdrop-filter: saturate(1.1) blur(10px);
+    background: rgba(251, 246, 236, 0.9);
+    backdrop-filter: saturate(1.1);
+    -webkit-backdrop-filter: saturate(1.1);
     box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(30, 26, 21, 0.05);
   }
 
