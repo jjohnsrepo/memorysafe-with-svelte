@@ -28,13 +28,12 @@
     <p class="eyebrow">Contact</p>
     <h1 class="title">Let's talk about your memories.</h1>
     <p class="sub">
-      Tell me what you have. I'll get back to you within one business day with a quote and next
-      steps.
+      Share what you have — a quote and next steps follow within one business day.
     </p>
   </div>
 </section>
 
-<ContactSection heading="Send a message" sub="I read every note personally." />
+<ContactSection heading="Send a message" sub="Every note is read personally." />
 
 <style>
   .hero {

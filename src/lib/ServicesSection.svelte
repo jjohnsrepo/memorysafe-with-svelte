@@ -64,11 +64,11 @@
 <section id="services" class="section section--alt">
   <div class="wrapper">
     <Reveal>
-      <p class="eyebrow">What I digitize</p>
+      <p class="eyebrow">What MemorySafe digitizes</p>
       <h2 class="section-title">A growing selection of formats.</h2>
       <p class="section-sub">
-        As a new studio, I continue to grow the number of legacy formats I support. New formats are
-        added as often as new hardware is acquired.
+        As a new studio, MemorySafe keeps growing the number of legacy formats it supports. New
+        formats are added as often as new hardware is acquired.
       </p>
     </Reveal>
 
@@ -91,7 +91,7 @@
 
     <Reveal delay={180}>
       <p class="foot">
-        Have some old tech you want to donate? Let me know <a href="#contact">here!</a>
+        Have some old tech you want to donate? Get in touch <a href="#contact">here!</a>
       </p>
     </Reveal>
   </div>

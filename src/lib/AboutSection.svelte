@@ -11,7 +11,7 @@
           <h2 class="section-title">What is MemorySafe?</h2>
 
           <p class="lede">
-          Don't let you old home videos and and precious memories rot away in a garage or dusty closet.
+          Don't let your old home videos and precious memories rot away in a garage or dusty closet.
           </p>
           <p>
             MemorySafe is a small one man operation dedicated to converting your old analog/digital memories to modern 

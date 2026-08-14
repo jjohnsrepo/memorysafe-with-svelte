@@ -6,7 +6,7 @@
     {
       num: '01',
       title: 'Ship your media',
-      body: "Pack up your tapes or discs and send them over. I'll email a confirmation within 24 hours of receipt and keep you updated along the way."
+      body: "Pack up your tapes or discs and send them over. A confirmation email lands within 24 hours of receipt, and you'll be kept updated along the way."
     },
     {
       num: '02',
@@ -154,7 +154,8 @@
         <p class="footnote">
           <sup class="fn-mark">*</sup>While every effort is made to ensure no media is damaged or
           lost, accidents happen &mdash; a risk inherent to working with old media. In the event of
-          an accident, I&rsquo;ll communicate with you and we can discuss an appropriate response.
+          an accident, you&rsquo;ll hear about it right away, and an appropriate response can be
+          worked out together.
         </p>
       </div>
     </div>

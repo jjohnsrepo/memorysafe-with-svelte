@@ -50,15 +50,6 @@
             those too. I soon had hours of footage that would have been lost if I had not rescued
             them.
           </p>
-          <p>
-            That was the beginning. MemorySafe is still a one-person operation, and I intend to keep
-            it that way. Every item that comes through my door is handled by me, personally.
-          </p>
-
-          <blockquote class="pull">
-            "Your memories are in the hands of someone who genuinely cares — not a technician on a
-            conveyor belt."
-          </blockquote>
 
           <h2>How I work</h2>
           <p>
