@@ -2,7 +2,7 @@
   import Reveal from '$lib/Reveal.svelte';
 
   export let heading = 'Get in touch';
-  export let sub = 'I respond within one business day — usually much faster.';
+  export let sub = "You'll hear back within one business day — usually much faster.";
 
   let sending = false;
   let sent = false;
@@ -29,7 +29,7 @@
         error = body.errors?.[0]?.message ?? 'Something went wrong. Please try again.';
       }
     } catch {
-      error = 'Connection error. Please try again or email me directly.';
+      error = 'Connection error. Please try again, or reach out by email.';
     } finally {
       sending = false;
     }
@@ -62,7 +62,7 @@
                 </svg>
               </div>
               <h3>Message received.</h3>
-              <p>Thanks — I'll be in touch soon.</p>
+              <p>Thanks — talk soon.</p>
               <button class="btn btn-ghost" on:click={() => (sent = false)}>
                 Send another
               </button>
