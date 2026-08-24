@@ -2,9 +2,9 @@
   import Reveal from '$lib/Reveal.svelte';
 
   const rates = [
-    { label: 'VHS', price: '$15', unit: 'per tape' },
-    { label: 'VHS-C', price: '$20', unit: 'per tape'},
-    { label: 'CD/DVD', price: '$10', unit: 'per CD'}
+    { label: 'VHS', price: '$22', unit: 'per tape' },
+    { label: 'VHS-C', price: '$22', unit: 'per tape'},
+    { label: 'CD/DVD', price: '$15', unit: 'per CD'}
 
     /*Uncomment these as you support more mediums
     { label: '8mm / Super 8 film', price: '$30', unit: 'per reel' },
