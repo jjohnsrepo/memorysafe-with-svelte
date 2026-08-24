@@ -22,7 +22,14 @@
       tag: 'CD',
       img: '/services/cd-dvd.jpg',
       alt: 'Stack of CDs and DVDs'
-    }
+    },
+    {
+      title: 'Hi8 · Video8',
+      desc: 'Give your old Hi8 and Video8 footage a new life',
+      img: '/services/hi8_video_8.jpg',
+      alt: 'Hi8 and Mini DV camcorder tapes',
+      tag: 'Video',
+    },
     /* {
       title: '8mm & Super 8 Film',
       desc: 'Frame-by-frame transfer of classic reels from the 1950s–1980s. Color and black & white.',
@@ -43,13 +50,6 @@
       img: 'https://placehold.co/640x420/c89f3c/1e1a15?text=Audio',
       alt: 'Audio cassette tapes',
       tag: 'Audio',
-    },
-    {
-      title: 'Hi8 · Video8 · Mini DV',
-      desc: 'Camcorder tapes from the 90s and 2000s. Full-resolution digital, no generational loss.',
-      img: 'https://placehold.co/640x420/7b8a6a/fbf6ec?text=Camcorder',
-      alt: 'Hi8 and Mini DV camcorder tapes',
-      tag: 'Video',
     },
     {
       title: 'Film Negatives',
