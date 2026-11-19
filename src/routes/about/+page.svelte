@@ -101,7 +101,7 @@
               </div>
               <div>
                 <dt>Formats</dt>
-                <dd>VHS, VHS-C, CD/DVD</dd>
+                <dd>VHS, VHS-C, Mini DV, Hi8, Video8, CD/DVD</dd>
               </div>
               <div>
                 <dt>Established</dt>

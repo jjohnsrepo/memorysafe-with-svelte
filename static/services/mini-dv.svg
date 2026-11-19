@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Mini DV camcorder tape</title>
+  <desc id="desc">An illustrated compact digital videocassette with two reels and a Mini DV label.</desc>
+  <rect width="640" height="400" fill="#e8ddcb"/>
+  <ellipse cx="320" cy="319" rx="204" ry="20" fill="#55493b" opacity=".13"/>
+  <g transform="translate(126 93) rotate(-5 194 105)">
+    <rect x="0" y="0" width="388" height="220" rx="16" fill="#302e2b"/>
+    <rect x="17" y="17" width="354" height="42" rx="6" fill="#55534c"/>
+    <rect x="28" y="77" width="332" height="81" rx="9" fill="#aaa99d"/>
+    <circle cx="102" cy="117" r="31" fill="#ddd9cb" stroke="#716f63" stroke-width="6"/>
+    <circle cx="286" cy="117" r="31" fill="#ddd9cb" stroke="#716f63" stroke-width="6"/>
+    <circle cx="102" cy="117" r="10" fill="#55534c"/>
+    <circle cx="286" cy="117" r="10" fill="#55534c"/>
+    <path d="M136 111h116v12H136z" fill="#55534c"/>
+    <rect x="28" y="174" width="332" height="29" rx="4" fill="#fbf6ec"/>
+    <text x="42" y="195" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#302e2b">Mini DV</text>
+    <path d="M264 183h80v4h-80zm0 8h59v3h-59z" fill="#b85538"/>
+  </g>
+</svg>

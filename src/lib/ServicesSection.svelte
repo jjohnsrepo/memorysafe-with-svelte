@@ -17,6 +17,13 @@
       alt: 'VHS-C camcorder tapes'
     },
     {
+      title: 'Mini DV',
+      desc: 'Preserve your digital camcorder memories as modern video files you can watch, share, and keep.',
+      tag: 'Tapes',
+      img: '/services/mini-dv.svg',
+      alt: 'Illustration of a Mini DV camcorder tape'
+    },
+    {
       title: 'CD/DVD',
       desc: 'Convert your old CDs into a modern playable format you can take anywhere. DVD-R included.',
       tag: 'CD',
@@ -27,7 +34,7 @@
       title: 'Hi8 · Video8',
       desc: 'Give your old Hi8 and Video8 footage a new life',
       img: '/services/hi8_video_8.jpg',
-      alt: 'Hi8 and Mini DV camcorder tapes',
+      alt: 'Hi8 and Video8 camcorder tapes',
       tag: 'Video',
     },
     /* {

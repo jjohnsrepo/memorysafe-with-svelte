@@ -12,7 +12,7 @@
   <title>MemorySafe — Digitization That Cares</title>
   <meta
     name="description"
-    content="The friendly, independent alternative to big box digitization. Unbeatable turnaround, service, and price."
+    content={SITE_DESCRIPTION}
   />
   <link rel="canonical" href="{SITE_URL}/" />
   <meta property="og:title" content="MemorySafe — Digitization That Cares" />
@@ -62,8 +62,8 @@
 
       <Reveal delay={160}>
         <p class="lede">
-          Digitize your old analog media into crisp digital files you can watch, share, and keep
-          forever. Every item handled personally, no batch queues, no conveyor belts.
+          Digitize your VHS, VHS-C, Mini DV, Hi8, Video8, and CD/DVD collections into digital files
+          you can watch, share, and keep forever. Every item handled personally, no batch queues, no conveyor belts.
         </p>
       </Reveal>
 

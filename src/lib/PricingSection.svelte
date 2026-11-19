@@ -4,6 +4,7 @@
   const rates = [
     { label: 'VHS', price: '$20', unit: 'per tape' },
     { label: 'VHS-C', price: '$22', unit: 'per tape'},
+    { label: 'Mini DV', price: '$22', unit: 'per tape' },
     { label: 'CD/DVD', price: '$15', unit: 'per CD'},
     { label: 'Hi8 / Video8', price: '$22', unit: 'per tape' },
     
@@ -11,7 +12,6 @@
 
     /*Uncomment these as you support more mediums
     { label: '8mm / Super 8 film', price: '$30', unit: 'per reel' },
-    { label: 'Mini DV', price: '$18', unit: 'per tape' },
     { label: 'Photographs', price: '$0.45', unit: 'per print' },
     { label: '35mm slides', price: '$0.65', unit: 'per slide' },
     { label: 'Film negatives', price: '$0.50', unit: 'per frame' },
