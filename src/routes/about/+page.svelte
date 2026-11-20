@@ -239,6 +239,7 @@
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    filter: brightness(0.92);
   }
 
   .facts {

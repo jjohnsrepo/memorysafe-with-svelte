@@ -20,8 +20,8 @@
       title: 'Mini DV',
       desc: 'Preserve your digital camcorder memories as modern video files you can watch, share, and keep.',
       tag: 'Tapes',
-      img: '/services/mini-dv.svg',
-      alt: 'Illustration of a Mini DV camcorder tape'
+      img: '/services/mini-dv.jpg',
+      alt: 'Mini DV camcorder tape'
     },
     {
       title: 'CD/DVD',
